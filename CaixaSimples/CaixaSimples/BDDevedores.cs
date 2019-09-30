@@ -1,6 +1,6 @@
 ﻿namespace CaixaSimples {
     
-    
+    //inutil
     public partial class BDDevedores {
     }
 }
