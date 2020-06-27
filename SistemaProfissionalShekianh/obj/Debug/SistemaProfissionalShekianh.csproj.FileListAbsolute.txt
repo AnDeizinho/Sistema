@@ -1,0 +1,9 @@
+C:\particular\programa\bancomesmomano\CaixaSimples\SistemaProfissionalShekianh\bin\Debug\SistemaProfissionalShekianh.exe
+C:\particular\programa\bancomesmomano\CaixaSimples\SistemaProfissionalShekianh\bin\Debug\SistemaProfissionalShekianh.pdb
+C:\particular\programa\bancomesmomano\CaixaSimples\SistemaProfissionalShekianh\obj\Debug\SistemaProfissionalShekianh.csprojResolveAssemblyReference.cache
+C:\particular\programa\bancomesmomano\CaixaSimples\SistemaProfissionalShekianh\obj\Debug\SistemaProfissionalShekianh.Form1.resources
+C:\particular\programa\bancomesmomano\CaixaSimples\SistemaProfissionalShekianh\obj\Debug\SistemaProfissionalShekianh.Properties.Resources.resources
+C:\particular\programa\bancomesmomano\CaixaSimples\SistemaProfissionalShekianh\obj\Debug\SistemaProfissionalShekianh.csproj.GenerateResource.Cache
+C:\particular\programa\bancomesmomano\CaixaSimples\SistemaProfissionalShekianh\obj\Debug\SistemaProfissionalShekianh.exe
+C:\particular\programa\bancomesmomano\CaixaSimples\SistemaProfissionalShekianh\obj\Debug\SistemaProfissionalShekianh.pdb
+C:\particular\programa\bancomesmomano\CaixaSimples\SistemaProfissionalShekianh\obj\Debug\SistemaProfissionalShekianh.Caixa.resources

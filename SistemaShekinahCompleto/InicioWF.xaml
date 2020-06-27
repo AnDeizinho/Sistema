@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="SistemaShekinahCompleto.InicioWF"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="513.158" d:DesignWidth="505.263">
+    
+    <StackPanel Name="Painel" Width="500" Height="500">
+        <StackPanel.Triggers>
+            <EventTrigger RoutedEvent="StackPanel.Loaded">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetName="Painel" Storyboard.TargetProperty="Width"
+                                         From="0" To="500" Duration="0:0:5" AutoReverse="True" RepeatBehavior="Forever">
+
+
+                        </DoubleAnimation>
+                        <DoubleAnimation Storyboard.TargetName="Painel" Storyboard.TargetProperty="Height"
+                                         From="0" To="500" Duration="0:0:5" AutoReverse="True" RepeatBehavior="Forever"></DoubleAnimation>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </StackPanel.Triggers>
+        <StackPanel.Background >
+            <ImageBrush ImageSource="/SistemaShekinahCompleto;component/imagens/LOGAN.png"/>
+        </StackPanel.Background>
+
+    </StackPanel>
+</UserControl>

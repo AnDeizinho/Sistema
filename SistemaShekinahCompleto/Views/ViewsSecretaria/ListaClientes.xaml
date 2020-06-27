@@ -1,0 +1,22 @@
+﻿<Page x:Class="SistemaShekinahCompleto.Views.ViewsSecretaria.ListaClientes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+              Background="#FF27062E" d:DesignWidth="534" d:DesignHeight="296" Name="pg">
+    <Grid>
+        <DataGrid Name="DtGrid" Margin="20" MaxHeight="700">
+           
+            
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Name="btnAlterar" Header="Alterar Cadastro" Click="btnAlterar_Click"/>
+                    <MenuItem Header="Visualizar Contratos"/>
+                    
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+        
+    </Grid>
+</Page>

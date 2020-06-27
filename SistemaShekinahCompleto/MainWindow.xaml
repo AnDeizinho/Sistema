@@ -1,0 +1,42 @@
+﻿<Window x:Class="SistemaShekinahCompleto.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" MinHeight="600" MinWidth="900" WindowState="Maximized" WindowStyle="None" 
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        
+    </Window.Resources>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF250225" Offset="0"/>
+            <GradientStop Color="#FFB403B4" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="75*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Name="Coluna" Width="300"/>
+            <ColumnDefinition Width="500*"/>
+        </Grid.ColumnDefinitions>
+        <Button Name="btnInicio" Content="Inicio" Grid.Column="0" Grid.Row="0" Style="{StaticResource Limao}" Click="btnInicio_Click"></Button>
+        <Button Name="btnSecretaria" Content="Secretaria" Grid.Column="0" Grid.Row="1" Style="{StaticResource Escuro}" BorderBrush="#FFFDFDFD" Click="btnSecretaria_Click"/>
+        <Button Content="Caixa" Grid.Column="0" Grid.Row="2" Style="{StaticResource Cinzento}" Click="Button_Click_1"/>
+        <Button Content="Contas de Usuários" Grid.Column="0" Grid.Row="3" Style="{StaticResource Violeta}"/>
+        <Button Name="btnOcultar" Content="Ocultar" Grid.Column="0" Grid.Row="4" Margin="5" Background="#FF394BBD" Foreground="White">
+            
+     </Button>
+        <Button Name="btnSair" Content="Sair" Grid.Column="0" Grid.Row="5" Margin="5" Background="#FFA22F2F" Foreground="#FF470202" Click="btnSair_Click"/>
+        <ScrollViewer Grid.Column="1" Grid.RowSpan="6" >
+            <Frame Name="meuFrime"  NavigationUIVisibility="Hidden" >
+            
+            </Frame>
+        </ScrollViewer>
+    </Grid>
+</Window>

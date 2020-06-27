@@ -1,0 +1,55 @@
+﻿<Page x:Class="SistemaShekinahCompleto.Views.Caixa"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="900"
+	Title="Caixa">
+
+    <Grid>
+        <StackPanel>
+            <Menu Background="Lime">
+                <Menu.Triggers>
+                    <EventTrigger RoutedEvent="Page.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                     From="0.0" To="1.0" Duration="0:0:1"></DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Menu.Triggers>
+                <MenuItem Header="Demonstrativos" Background="Lime">
+                    <MenuItem Header="Resumo do Caixa"/>
+                    <MenuItem Header="Mensalidades"/>
+                    <MenuItem Header="Depósitos"/>
+                    
+                    <MenuItem Header="Saídas"/>
+                    <MenuItem Header="Produtos"/>
+                    <MenuItem Header="Lista de Vendas"/>
+                    <MenuItem Header="Histórico"/>
+                   
+                </MenuItem>
+                <MenuItem Header="Caixa">
+                    <MenuItem Header="Depositar"/>
+                    <MenuItem Header="Dar Saída"/>
+                    <MenuItem Header="Dar Entrada"/>
+                    <MenuItem Header="Vender"/>
+                    <MenuItem Header="Abrir Caixa"/>
+                    <MenuItem Header="Fechar Caixa"/>
+                </MenuItem>
+                
+                <MenuItem Header="Relatórios">
+                    <MenuItem Header="Do Dia"/>
+                    <MenuItem Header="Por Período"/>
+                </MenuItem>
+            </Menu>
+            <StackPanel Name="Pn">
+                
+            </StackPanel>
+        </StackPanel>
+        
+        
+    </Grid>
+</Page>

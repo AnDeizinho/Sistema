@@ -1,0 +1,101 @@
+﻿<Page x:Class="SistemaShekinahCompleto.Views.ViewsSecretaria.CadastroDeCliente"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:WF="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+             mc:Ignorable="d" d:Width="606.767" Height="940.112" Background="#FF27062E" Width="908" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+
+
+        </Grid.RowDefinitions>
+        <Label Content="Cadastrar Cliente" Grid.ColumnSpan="5" HorizontalAlignment="Center"/>
+        <Label Content="CC" Grid.Row="1" HorizontalAlignment="Right"/>
+        <Label Content="Pai" Grid.Row="2" HorizontalAlignment="Right"/>
+        <Label Content="Mãe" Grid.Row="3" HorizontalAlignment="Right"/>
+        <Label Content="CPF Do Pai" Grid.Row="4" HorizontalAlignment="Right"/>
+        <Label Content="CPF Da Mãe" Grid.Row="5" HorizontalAlignment="Right"/>
+        <Label Content="Fone do Pai" Grid.Row="6" HorizontalAlignment="Right"/>
+        <Label Content="Fone da Mãe" Grid.Row="7" HorizontalAlignment="Right"/>
+        <Label Content="Endereço" Grid.Row="8" HorizontalAlignment="Right"/>
+        <Label Content="Numero" Grid.Row="9" HorizontalAlignment="Right"/>
+        <Label Content="Bairro" Grid.Row="10" HorizontalAlignment="Right"/>
+        <Label Content="Complemento" Grid.Row="11" HorizontalAlignment="Right"/>
+        <Label Content="Cidade" Grid.Row="12" HorizontalAlignment="Right"/>
+        <Label Content="Estado" Grid.Row="13" HorizontalAlignment="Right"/>
+        <Label Content="CEP" Grid.Row="14" HorizontalAlignment="Right"/>
+        <Label Content="Filhos" Grid.Row="15" HorizontalAlignment="Right"/>
+        <Label Content="RG" Grid.Row="16" HorizontalAlignment="Right"/>
+        
+        <TextBox Name="txtCC" Grid.Row="1" Grid.Column="1" IsEnabled="False" Text="0"/>
+        <Button  Content="Ou Alterar Existente" Style="{StaticResource ResourceKey=Violeta}" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Name="btnPesquisarCliente" Click="btnPesquisarCliente_Click"></Button>
+        <TextBox Name="txtpai" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="1" MaxLength="100" LostFocus="txtpai_LostFocus" />
+        <TextBox Name="txtmae" Grid.Row="3" Grid.ColumnSpan="3" Grid.Column="1"  MaxLength="100" LostFocus="txtmae_LostFocus"/>
+        <WindowsFormsHost Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="5" FontSize="24" Background="{x:Null}">
+            <WF:MaskedTextBox x:Name="txtcpfpai" Mask="000,000,000-00" ForeColor="White" BackColor="#FF480248" LostFocus="MaskedTextBox_Validated_1">
+                
+            </WF:MaskedTextBox>
+        </WindowsFormsHost>
+        <WindowsFormsHost Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="5" FontSize="24" Background="{x:Null}">
+            <WF:MaskedTextBox x:Name ="txtcpfmae" Mask="000,000,000-00" ForeColor="White" BackColor="#FF480248" LostFocus="txtcpfmae_Validated">
+
+            </WF:MaskedTextBox>
+        </WindowsFormsHost>
+        <WindowsFormsHost Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Margin="5" FontSize="24" Background="{x:Null}">
+            <WF:MaskedTextBox x:Name="txtfonepai" Mask="(00) 00000-0000" ForeColor="White" BackColor="#FF480248" LostFocus="txtfonepai_Validated">
+
+            </WF:MaskedTextBox>
+        </WindowsFormsHost>
+        <WindowsFormsHost Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Margin="5" FontSize="24" Background="{x:Null}">
+            <WF:MaskedTextBox x:Name="txtfonemae" Mask="(00) 00000-0000" ForeColor="White" BackColor="#FF480248" LostFocus="txtfonemae_Validated">
+
+            </WF:MaskedTextBox>
+        </WindowsFormsHost>
+        <TextBox Name="txtendereco" Grid.Row="8" Grid.ColumnSpan="3" Grid.Column="1"  MaxLength="150" LostFocus="txtendereco_LostFocus"/>
+        <TextBox Name="txtnumero" Grid.Row="9" Grid.ColumnSpan="1" Grid.Column="1" MaxLength="10" LostFocus="txtnumero_LostFocus"/>
+        <TextBox Name="txtbairro" Grid.Row="10" Grid.ColumnSpan="3" Grid.Column="1" MaxLength="150" LostFocus="txtbairro_LostFocus"/>
+        <TextBox Name="txtcomplemento" Grid.Row="11" Grid.ColumnSpan="3" Grid.Column="1" MaxLength="150" LostFocus="txtcomplemento_LostFocus"/>
+        <TextBox Name="txtcidade" Grid.Row="12" Grid.ColumnSpan="2" Grid.Column="1" MaxHeight="50" LostFocus="txtcidade_LostFocus"/>
+        <TextBox Name ="txtEstado" Grid.Row="13" Grid.ColumnSpan="1" Grid.Column="1" MaxLength="2" LostFocus="txtEstado_LostFocus"/>
+        <WindowsFormsHost Grid.Row="14" Grid.ColumnSpan="2" Grid.Column="1" Margin="5" FontSize="24" Background="{x:Null}">
+            <WF:MaskedTextBox x:Name="txtcep" Mask="00000-000" ForeColor="White" BackColor="#FF480248" LostFocus="txtcep_Validated"></WF:MaskedTextBox>
+        </WindowsFormsHost>
+        <TextBox Name="txtfilhos" Grid.Row="15" Grid.ColumnSpan="1" Grid.Column="1" LostFocus="txtfilhos_LostFocus" KeyDown="txtfilhos_KeyDown"/>
+        <TextBox Name="txtrg" Grid.Row="16" Grid.ColumnSpan="1" Grid.Column="1" MaxLength="8" LostFocus="txtrg_LostFocus"/>
+
+
+        <StackPanel Grid.Row="17" Grid.Column="0" Grid.ColumnSpan="6" Orientation="Horizontal">
+            <Button x:Name="btnsalvar" Content="Salvar" Style="{StaticResource ResourceKey=Violeta}"  Width="200" Margin="150,5,5,5"  Click="btnsalvar_Click"/>
+            <Button x:Name="btnContrato" Style="{StaticResource ResourceKey=Violeta}" Margin="5" Width="200" Content="Contratos" ></Button>
+            <Button x:Name="btnAdicionarAluno" Style="{StaticResource ResourceKey=Violeta}" Margin="5" Width="200" Content="Novo Aluno" Click="btnAdicionarAluno_Click" ></Button>
+        </StackPanel>
+   
+    </Grid>
+</Page>

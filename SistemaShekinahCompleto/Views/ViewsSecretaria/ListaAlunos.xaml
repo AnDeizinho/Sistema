@@ -1,0 +1,67 @@
+﻿<Page x:Class="SistemaShekinahCompleto.Views.ViewsSecretaria.ListaAlunos"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="900" Loaded="Page_Loaded_1">
+    
+        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="550*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5" Width="880">
+            
+            <TextBox Name="txtCod"  Width="100" ></TextBox>
+            <TextBox Name="txtAluno" Width="300"></TextBox>
+            <ComboBox Name="cbTurmas"  Width="200" DataContext="{Binding TurmasDAO}" SelectionChanged="cbTurmas_SelectionChanged" >
+               
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Background="#FFA552D4" Width="200" Height="30">
+                            <TextBlock Text="{Binding descricao}" FontSize="16" />
+                        </StackPanel>
+                    </DataTemplate>
+                    
+                </ComboBox.ItemTemplate>
+                <ComboBoxItem ContentStringFormat="Todos os Alunos"/>
+
+
+            </ComboBox>
+            <TextBox Name="txtano" Width="100"></TextBox>
+            <Label Name="lblTT" Content="Total=" FontSize="20"></Label>
+        </StackPanel>
+        
+            <DataGrid Name="MeuGrid" Grid.Row="1" AutoGenerateColumns="false" HorizontalGridLinesBrush="#FFF9F9F9" 
+                  VerticalGridLinesBrush="#FFF9F9F9" DataContext="{Binding AlunoEnt}" 
+                  ItemsSource="{Binding}" MouseDoubleClick="MeuGrid_MouseDoubleClick" IsReadOnly="true" CanUserAddRows="False" 
+                  CanUserDeleteRows="false" MaxWidth="1000" MaxHeight="600" Margin="0,10,10,0">
+                    <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding id_aluno}" Header="CA"/>
+                    <DataGridTextColumn Binding="{Binding id_cliente}" Header="CC"/>
+                    <DataGridTextColumn Binding="{Binding nome}" Header="Aluno"/>
+                    <DataGridTextColumn Binding="{Binding pai}" Header="Pai"/>
+                    <DataGridTextColumn Binding="{Binding mae}" Header="Mãe"/>
+                    <DataGridTextColumn Binding="{Binding fone_pai}" Header="Fone Pai" />
+                    <DataGridTextColumn Binding="{Binding fone_mae}" Header="Fone Mãe"/>
+                    <DataGridTextColumn Binding="{Binding descricao}" Header="Turma"/>
+                    <DataGridTextColumn Binding="{Binding nascimento}" Header="Nascimento"/>
+                    <DataGridTextColumn Binding="{Binding integral}" Header="Integral"/>
+                    <DataGridTextColumn Binding="{Binding sexo}" Header="Sexo"/>
+                        
+                    
+                </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Alterar Aluno" Name="btnAltera" Click="btnAltera_Click"></MenuItem>
+                    <MenuItem Header="Alterar Cliente"></MenuItem>
+                    <MenuItem Header="Visualizar Notas"></MenuItem>
+                    <MenuItem Header="Mais Opçôes"></MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+        
+
+    </Grid>
+</Page>

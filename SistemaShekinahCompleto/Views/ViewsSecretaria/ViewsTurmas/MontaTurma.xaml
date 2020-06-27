@@ -1,0 +1,74 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local ="clr-namespace:SistemaShekinahCompleto.Views.ViewsSecretaria.ViewsTurmas"
+             xmlns:Entidades="clr-namespace:SistemaShekinahCompleto.Entidades;assembly=SistemaShekinahCompleto.Entidades" x:Class="SistemaShekinahCompleto.Views.ViewsSecretaria.ViewsTurmas.MontaTurma" x:Name="MeuName"
+             mc:Ignorable="d" 
+             Height="423.609" Width="650.752">
+  
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition Width="31*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="LsBx" Margin="5,5,5,30" SelectionChanged="LsBx_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding descricao}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="btnNovo" Header="Novo" Click="btnNovo_Click"/>
+                    <MenuItem x:Name="btnAlterar" Header="Alterar" Click="btnAlterar_Click"/>
+                    <MenuItem x:Name="btnDeletar" Header="Deletar" Click="btnDeletar_Click"/>
+                </ContextMenu>
+            </ListBox.ContextMenu>
+        </ListBox>
+        <StackPanel Margin="5" Grid.Column="1">
+
+            <ComboBox x:Name="cbano" Text="Selecione" SelectionChanged="cbano_SelectionChanged" SelectedIndex="0">
+                <TextBlock Text="Ano Letivo"/>
+                <TextBlock Text="2019"/>
+                <TextBlock Text="2020"/>
+
+            </ComboBox>
+            <TextBox IsEnabled="False" x:Name="txtTurma"/>
+            <ComboBox x:Name="cbserie" IsEnabled="False" SelectedIndex="0">
+                <ComboBoxItem>
+                    <TextBlock Text="Séries"/>
+                </ComboBoxItem>
+            </ComboBox>
+            <ComboBox x:Name="cbNivel" IsEnabled="False" SelectedIndex="0" >
+                <ComboBoxItem>
+                    <StackPanel>
+                        <TextBlock Text="Nível"/>
+                    </StackPanel>
+                </ComboBoxItem>
+            </ComboBox>
+            <ComboBox x:Name="cbturno" IsEnabled="False" SelectedIndex="0">
+                <ComboBoxItem>
+                    <StackPanel>
+                        <TextBlock Text="Turnos"/>
+                    </StackPanel>
+                </ComboBoxItem>
+            </ComboBox>
+            <ComboBox x:Name="cbprofessor" IsEnabled ="False" SelectedIndex="0" SelectionChanged="cbprofessor_SelectionChanged" >
+                    <ComboBoxItem>
+                        <StackPanel>
+                            <TextBlock Text="professor(a)"/>
+                        </StackPanel>
+                    </ComboBoxItem>
+                
+            </ComboBox>
+
+            <TextBox x:Name="txtano" IsEnabled="False" Text="{Binding Text, ElementName=cbano}"/>
+            <Button IsEnabled="False" x:Name="BtnSalvar" Content="Salvar" Margin="5" Click="BtnSalvar_Click"/>
+            <Button IsEnabled="False" x:Name="BtnCancelar" Content="Cancelar" Margin="5" Click="BtnCancelar_Click"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
