@@ -113,7 +113,7 @@ namespace CaixaSimples
 
                 DataTable tabela = await Task.Run(() =>
                 {
-                    SqlConnection conexao = new SqlConnection(StatusDoCaixa.conStringBDCaixa);
+                    SqlConnection conexao = new SistemaShekinahCompleto.Model.Conexao().NovaConexaoBdCaixa();
                     
                     SqlCommand comando = new SqlCommand();
                     comando.Connection = conexao;
