@@ -316,7 +316,7 @@ namespace CaixaSimples
         private void carregaTblMensalidade()
         {
             
-            SqlConnection conexao = new SqlConnection(StatusDoCaixa.conStringBDCaixa);
+            SqlConnection conexao = new SistemaShekinahCompleto.Model.Conexao().NovaConexaoBdCaixa();
             conexao.Open();
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexao;
