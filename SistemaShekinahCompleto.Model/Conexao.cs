@@ -16,7 +16,7 @@ namespace SistemaShekinahCompleto.Model
 
         public Conexao()
         {
-            prov = Provedores.Monica;
+            prov = Provedores.pc_servidor;
         }
         public SqlConnection NovaConexaoBdAtaFinal()
         {
