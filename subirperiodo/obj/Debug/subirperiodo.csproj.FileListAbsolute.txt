@@ -1,0 +1,10 @@
+C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\subirperiodo\bin\Debug\subirperiodo.exe.config
+C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\subirperiodo\bin\Debug\subirperiodo.exe
+C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\subirperiodo\bin\Debug\subirperiodo.pdb
+C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\subirperiodo\bin\Debug\SistemaShekinahCompleto.Entidades.dll
+C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\subirperiodo\bin\Debug\SistemaShekinahCompleto.Model.dll
+C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\subirperiodo\bin\Debug\SistemaShekinahCompleto.Entidades.pdb
+C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\subirperiodo\bin\Debug\SistemaShekinahCompleto.Model.pdb
+C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\subirperiodo\obj\Debug\subirperiodo.csprojResolveAssemblyReference.cache
+C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\subirperiodo\obj\Debug\subirperiodo.exe
+C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\subirperiodo\obj\Debug\subirperiodo.pdb

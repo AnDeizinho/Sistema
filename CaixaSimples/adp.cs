@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using SistemaShekinahCompleto.Model;
 namespace CaixaSimples
 {
     
     
         public class adp
         {
-            SqlConnection conexao = new SqlConnection(StatusDoCaixa.conStringBDAtaFinal);
+            SqlConnection conexao = new Conexao().NovaConexaoBdAtaFinal();
             SqlDataAdapter adaptador = new SqlDataAdapter();
             SqlCommand cmd;
             public adp(string select)
