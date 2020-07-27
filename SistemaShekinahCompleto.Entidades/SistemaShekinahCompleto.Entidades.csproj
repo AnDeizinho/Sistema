@@ -41,10 +41,13 @@
   <ItemGroup>
     <Compile Include="AlunoEnt.cs" />
     <Compile Include="AlunosEnt.cs" />
+    <Compile Include="AtaFinalEnt.cs" />
+    <Compile Include="BimestreEnt.cs" />
     <Compile Include="ClienteEnt.cs" />
     <Compile Include="ClienteAbst.cs" />
     <Compile Include="ContratoEnt.cs" />
     <Compile Include="DependenciasTurmas.cs" />
+    <Compile Include="Entidades_de_Bimestre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RetornosDoModel.cs" />
     <Compile Include="TurmaEnt.cs" />

@@ -1,0 +1,9 @@
+C:\particular\programa\bancomesmomano\LancaoNotaForm\LancaoNotaForm\bin\Release\LancaoNotaForm.exe.config
+C:\particular\programa\bancomesmomano\LancaoNotaForm\LancaoNotaForm\bin\Release\LancaoNotaForm.exe
+C:\particular\programa\bancomesmomano\LancaoNotaForm\LancaoNotaForm\bin\Release\LancaoNotaForm.pdb
+C:\particular\programa\bancomesmomano\LancaoNotaForm\LancaoNotaForm\obj\Release\LancaoNotaForm.Form1.resources
+C:\particular\programa\bancomesmomano\LancaoNotaForm\LancaoNotaForm\obj\Release\LancaoNotaForm.frmMenu.resources
+C:\particular\programa\bancomesmomano\LancaoNotaForm\LancaoNotaForm\obj\Release\LancaoNotaForm.Properties.Resources.resources
+C:\particular\programa\bancomesmomano\LancaoNotaForm\LancaoNotaForm\obj\Release\LancaoNotaForm.csproj.GenerateResource.Cache
+C:\particular\programa\bancomesmomano\LancaoNotaForm\LancaoNotaForm\obj\Release\LancaoNotaForm.exe
+C:\particular\programa\bancomesmomano\LancaoNotaForm\LancaoNotaForm\obj\Release\LancaoNotaForm.pdb

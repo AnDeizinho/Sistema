@@ -27,12 +27,12 @@ namespace SistemaShekinahCompleto.DAO
             
             return bd.CadastraTurmas(turma, out msg);
         }
-        public TurmasEnt SelectTurmas(string ano)
+        public TurmasEnt SelectTurmas(string ano, string str = "tbl_turma_Tudo" , System.Data.CommandType tp = System.Data.CommandType.StoredProcedure)
         {
             try
             {
                 
-                return bd.SelecionarTurmas("tbl_turma_Tudo", ano);
+                return bd.SelecionarTurmas(ano, str, tp);
             }
             catch
             {

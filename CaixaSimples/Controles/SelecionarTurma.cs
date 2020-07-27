@@ -13,6 +13,7 @@ namespace CaixaSimples.Controles
 {
     public partial class SelecionarTurma : frmFormulario
     {
+        string Ano;
         public TurmaEnt Turma
         {
             get
@@ -23,9 +24,9 @@ namespace CaixaSimples.Controles
         }
         TurmaEnt _turma;
         TurmasEnt Turmas;
-        public SelecionarTurma()
+        public SelecionarTurma(string ano)
         {
-            
+            Ano = ano;
             InitializeComponent();
         }
         public SelecionarTurma(TurmaEnt turma)
@@ -36,7 +37,7 @@ namespace CaixaSimples.Controles
 
         private void SelecionarTurma_Load(object sender, EventArgs e)
         {
-            Turmas = new TurmasDAO().SelectTurmas("2019");
+            Turmas = new TurmasDAO().SelectTurmas(Ano);
             ltTurmas.DataSource = Turmas;
         }
         void selecionaTurma()

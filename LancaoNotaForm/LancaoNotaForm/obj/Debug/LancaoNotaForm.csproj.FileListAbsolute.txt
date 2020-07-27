@@ -1,0 +1,10 @@
+C:\particular\programa\bancomesmomano\LancaoNotaForm\LancaoNotaForm\bin\Debug\LancaoNotaForm.exe.config
+C:\particular\programa\bancomesmomano\LancaoNotaForm\LancaoNotaForm\obj\Debug\LancaoNotaForm.csprojResolveAssemblyReference.cache
+C:\particular\programa\bancomesmomano\LancaoNotaForm\LancaoNotaForm\obj\Debug\LancaoNotaForm.Form1.resources
+C:\particular\programa\bancomesmomano\LancaoNotaForm\LancaoNotaForm\obj\Debug\LancaoNotaForm.frmMenu.resources
+C:\particular\programa\bancomesmomano\LancaoNotaForm\LancaoNotaForm\obj\Debug\LancaoNotaForm.Properties.Resources.resources
+C:\particular\programa\bancomesmomano\LancaoNotaForm\LancaoNotaForm\obj\Debug\LancaoNotaForm.csproj.GenerateResource.Cache
+C:\particular\programa\bancomesmomano\LancaoNotaForm\LancaoNotaForm\bin\Debug\LancaoNotaForm.exe
+C:\particular\programa\bancomesmomano\LancaoNotaForm\LancaoNotaForm\bin\Debug\LancaoNotaForm.pdb
+C:\particular\programa\bancomesmomano\LancaoNotaForm\LancaoNotaForm\obj\Debug\LancaoNotaForm.exe
+C:\particular\programa\bancomesmomano\LancaoNotaForm\LancaoNotaForm\obj\Debug\LancaoNotaForm.pdb

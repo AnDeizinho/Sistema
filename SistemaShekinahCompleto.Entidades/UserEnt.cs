@@ -17,7 +17,7 @@ namespace SistemaShekinahCompleto.Entidades
         public void setUsuario(string usuario)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.Connection = new SqlConnection(@"Data Source = PC-SERVIDOR,1433\SqlExpress; DataBase = BDAtaFinalteste; User ID = sa ; Password = yerdna");
+            cmd.Connection = new SqlConnection(@"Data Source = monica; DataBase = BDAtaFinal; User ID = sa ; Password = yerdna");
             cmd.CommandText = "Select * from tbl_user where usuario = @user";
             cmd.Parameters.AddWithValue("@user", usuario);
             cmd.Connection.Open();
@@ -28,7 +28,7 @@ namespace SistemaShekinahCompleto.Entidades
                 while (leitor.Read())
                 {
                     id = int.Parse(leitor["id_usuario"].ToString());
-                    senha = leitor.GetString(2);
+                    senha = leitor.GetString(2).Trim();
                     Tipo = (Permissao)Enum.Parse(typeof(Permissao), leitor["tipo"].ToString());
                     encontrado = true;
                 }
@@ -50,7 +50,7 @@ namespace SistemaShekinahCompleto.Entidades
         {
             if (Usuario == "" || Usuario == null)
                 throw new ApplicationException("usuário inválido");
-            if (this.senha.Contains(bxsenha)!=true)
+            if (this.senha != bxsenha)
                 throw new ApplicationException("senha inválida");
           
         }

@@ -18,7 +18,7 @@ namespace CaixaSimples
         SqlConnection conexao = new Conexao().NovaConexaoBdAtaFinal();
         SqlDataAdapter atp;
         DataTable tbl;
-        
+        DataTable tblturma = new DataTable();
         string str = @"SELECT tbl_Alunos.[id_aluno]
 	  ,tbl_alunos.id_cliente 
       ,[nome]
@@ -45,11 +45,8 @@ namespace CaixaSimples
   
   
   ";
-        
-        public frmPesquisaAlunos()
+        void DefColunas()
         {
-            InitializeComponent();
-            
             dt.Columns[0].Width = 35;
             dt.Columns[1].Width = 35;
             dt.Columns[2].Width = 250;
@@ -62,34 +59,30 @@ namespace CaixaSimples
             dt.Columns[10].Width = 35;
             dt.Columns[13].Width = 50;
 
-            cb.Items.Add("Turma");
-            cb.SelectedIndex = 0;
-
-            //atp = new SqlDataAdapter("select id_turma, descricao from tbl_Turma",conexao);
-            TurmasDAO dao = new TurmasDAO();
-            TurmasEnt tur = dao.SelectTurmas("2019");
-            //atp.Fill(tblTurma);
-            foreach (TurmaEnt lin in tur)
-            {
-                cb.Items.Add(lin);
-            }
-            cb.DisplayMember = "Descricao";
-            cb.ValueMember = "id_turma";
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
             
-            string str2 = "where ano_recente = '" + txtano.Text + "' order by tbl_turma.descricao , nome";
+        }
+        void Carregamento()
+        {
+
+            cbNivel.SelectedIndex = 0;
+            
+
+            string str2 = string.Format("where tbl_turma.ano= '{0}' order by tbl_turma.descricao , nome", txtano.Text);
             SqlCommand comando = new SqlCommand(str + str2, conexao);
-            atp = new SqlDataAdapter( comando);
+            atp = new SqlDataAdapter(comando);
             atp.Fill(tbl = new DataTable());
             dt.DataSource = tbl;
             lbl.Text = "Quantidade : " + dt.Rows.Count;
-            
-            
+        }
+        public frmPesquisaAlunos()
+        {
+            InitializeComponent();
+            DefColunas();
+            Carregamento();
             
         }
+
+        
 
         private void textBox1_Validating(object sender, KeyEventArgs e)
         {
@@ -137,27 +130,28 @@ namespace CaixaSimples
 
         private void cb_Validated(object sender, EventArgs e)
         {
-            /*if (cb.SelectedIndex > 0)
+            if (cb.SelectedIndex > 0)
             {
-                string str2 = "where tbl_Alunos.id_turma = " + tblTurma.Rows[cb.SelectedIndex - 1][0].ToString() + " and ano_recente = '" + txtano.Text + "' order by tbl_turma.descricao , nome";
+                string str2 = "where tbl_Alunos.id_turma = " + tblturma.Rows[cb.SelectedIndex - 1][0].ToString() + " and tbl_turma.ano = '" + txtano.Text + "' order by tbl_turma.descricao , nome";
                 SqlCommand comando = new SqlCommand(str + str2, conexao);
                 atp = new SqlDataAdapter(comando);
                 atp.Fill(tbl = new DataTable());
                 dt.DataSource = tbl;
-            }*/
+                lbl.Text = "Quantidade = " + dt.RowCount;
+            }
         }
 
         private void cb_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (cb.SelectedIndex > 0)
-            {
-                string str2 = "where tbl_Alunos.id_turma = " + ((TurmaEnt)cb.SelectedItem ).id_turma + " and ano_recente = '" + txtano.Text + "' order by tbl_turma.descricao , nome";
-                SqlCommand comando = new SqlCommand(str + str2, conexao);
-                atp = new SqlDataAdapter(comando);
-                atp.Fill(tbl = new DataTable());
-                dt.DataSource = tbl;
-                lbl.Text = "Quantidade : " + dt.Rows.Count;
-            }
+            //if (cb.SelectedIndex > 0)
+            //{
+            //    string str2 = "where tbl_Alunos.id_turma = " + ((TurmaEnt)cb.SelectedItem ).id_turma + " and ano_recente = '" + txtano.Text + "' order by tbl_turma.descricao , nome";
+            //    SqlCommand comando = new SqlCommand(str + str2, conexao);
+            //    atp = new SqlDataAdapter(comando);
+            //    atp.Fill(tbl = new DataTable());
+            //    dt.DataSource = tbl;
+            //    lbl.Text = "Quantidade : " + dt.Rows.Count;
+            //}
         }
 
         private void txtnome_TextChanged(object sender, EventArgs e)
@@ -233,6 +227,24 @@ namespace CaixaSimples
                 }
             }
             lbl.Text = "Quantidade : " + dt.Rows.Count;
+        }
+
+       
+        private void cbNivel_Validated(object sender, EventArgs e)
+        {
+            cb.Items.Clear();
+            tblturma.Clear();
+            cb.Items.Add("Turma");
+            cb.SelectedIndex = 0;
+            atp = new SqlDataAdapter(string.Format("select id_turma, descricao from tbl_Turma a join tblano b on a.id_ano = b.id_ano where id_nivel = {0} and a.ano = {1}",
+                (int)Enum.Parse(typeof(Niveis), cbNivel.Text), txtano.Text == "" ? int.Parse(DateTime.Now.Year.ToString()) : int.Parse(txtano.Text)), conexao);
+
+            atp.Fill(tblturma);
+            foreach (DataRow lin in tblturma.Rows)
+            {
+                cb.Items.Add(lin[1].ToString());
+            }
+            
         }
         
     }
