@@ -8,15 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using SistemaShekinahCompleto.Model;
+using SistemaShekinahCompleto.DAO;
+using SistemaShekinahCompleto.Entidades;
 namespace CaixaSimples
 {
     public partial class frmPesquisaAlunos : Form
     {
-        SqlConnection conexao = new SqlConnection(StatusDoCaixa.conStringBDAtaFinal);
+        SqlConnection conexao = new Conexao().NovaConexaoBdAtaFinal();
         SqlDataAdapter atp;
         DataTable tbl;
-        DataTable tblTurma = new DataTable();
+        
         string str = @"SELECT tbl_Alunos.[id_aluno]
 	  ,tbl_alunos.id_cliente 
       ,[nome]
@@ -63,12 +65,16 @@ namespace CaixaSimples
             cb.Items.Add("Turma");
             cb.SelectedIndex = 0;
 
-            atp = new SqlDataAdapter("select id_turma, descricao from tbl_Turma",conexao);
-            atp.Fill(tblTurma);
-            foreach (DataRow lin in tblTurma.Rows)
+            //atp = new SqlDataAdapter("select id_turma, descricao from tbl_Turma",conexao);
+            TurmasDAO dao = new TurmasDAO();
+            TurmasEnt tur = dao.SelectTurmas("2019");
+            //atp.Fill(tblTurma);
+            foreach (TurmaEnt lin in tur)
             {
-                cb.Items.Add(lin[1].ToString());
+                cb.Items.Add(lin);
             }
+            cb.DisplayMember = "Descricao";
+            cb.ValueMember = "id_turma";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -145,7 +151,7 @@ namespace CaixaSimples
         {
             if (cb.SelectedIndex > 0)
             {
-                string str2 = "where tbl_Alunos.id_turma = " + tblTurma.Rows[cb.SelectedIndex - 1][0].ToString() + " and ano_recente = '" + txtano.Text + "' order by tbl_turma.descricao , nome";
+                string str2 = "where tbl_Alunos.id_turma = " + ((TurmaEnt)cb.SelectedItem ).id_turma + " and ano_recente = '" + txtano.Text + "' order by tbl_turma.descricao , nome";
                 SqlCommand comando = new SqlCommand(str + str2, conexao);
                 atp = new SqlDataAdapter(comando);
                 atp.Fill(tbl = new DataTable());

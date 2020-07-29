@@ -73,16 +73,16 @@
             this.cbSerie.FormattingEnabled = true;
             this.cbSerie.Items.AddRange(new object[] {
             "selecione"});
-            this.cbSerie.Location = new System.Drawing.Point(85, 12);
+            this.cbSerie.Location = new System.Drawing.Point(393, 9);
             this.cbSerie.Name = "cbSerie";
             this.cbSerie.Size = new System.Drawing.Size(220, 30);
-            this.cbSerie.TabIndex = 0;
+            this.cbSerie.TabIndex = 1;
             this.cbSerie.Validated += new System.EventHandler(this.cbSerie_Validated);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 15);
+            this.label1.Location = new System.Drawing.Point(324, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 22);
             this.label1.TabIndex = 1;
@@ -233,10 +233,10 @@
             "2019",
             "2018",
             "2017"});
-            this.cbano.Location = new System.Drawing.Point(411, 12);
+            this.cbano.Location = new System.Drawing.Point(82, 6);
             this.cbano.Name = "cbano";
             this.cbano.Size = new System.Drawing.Size(202, 30);
-            this.cbano.TabIndex = 1;
+            this.cbano.TabIndex = 0;
             this.cbano.Validated += new System.EventHandler(this.cbano_Validated);
             // 
             // txtCC
@@ -327,7 +327,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(343, 15);
+            this.label5.Location = new System.Drawing.Point(17, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 22);
             this.label5.TabIndex = 18;

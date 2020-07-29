@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using SistemaShekinahCompleto.Entidades;
+using SistemaShekinahCompleto.DAO;
 namespace CaixaSimples
 {
     public partial class FormMensalidade : frmFormulario
@@ -29,13 +30,17 @@ namespace CaixaSimples
         private void FormMensalidade_Load(object sender, EventArgs e)
         {
             txtCC.Text = "" + id_Cliente;
-            adapt = new adp("select id_turma, descricao from tbl_turma");
+            cbano.SelectedIndex = 1;
+            TurmasEnt tur = new TurmasDAO().SelectTurmas("2019");
+            adapt = new adp("select id_turma, descricao from tbl_turma where ano = '2019'");
             adapt.Preencher(tbl_turma);
-
-            foreach (DataRow linha in tbl_turma.Rows)
+            foreach (TurmaEnt linha in tur)
             {
-                cbSerie.Items.Add(linha[1].ToString());
+                cbSerie.Items.Add(linha);
             }
+            cbSerie.DisplayMember = "descricao";
+            cbSerie.ValueMember = "id_Turma";
+
 
             //MessageBox.Show(DateTime.Now.Month.ToString());
         }
@@ -197,11 +202,11 @@ namespace CaixaSimples
                 {
                     int id_turma = Convert.ToInt32(tbl_turma.Rows[cbSerie.SelectedIndex - 1][0].ToString());
 
-                    adapt = new adp("select nome from tbl_Alunos where id_turma = " + id_turma);
+                    adapt = new adp(string.Format("select nome from tbl_Alunos where id_turma = {0} and ano_recente = '{1}'", id_turma, cbano.Text) );
                     DataTable tbl_Alunos = new DataTable();
 
                     adapt.Preencher(tbl_Alunos);
-
+                    txtAluno.AutoCompleteCustomSource.Clear();
                     foreach (DataRow linha in tbl_Alunos.Rows)
                     {
                         txtAluno.AutoCompleteCustomSource.Add(linha[0].ToString());

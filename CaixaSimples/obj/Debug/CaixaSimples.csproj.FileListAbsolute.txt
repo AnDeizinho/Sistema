@@ -206,9 +206,6 @@ C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\CaixaSimples\bin\Debu
 C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\CaixaSimples\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\CaixaSimples\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\CaixaSimples\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\CaixaSimples\obj\Debug\CaixaSimples.csprojResolveAssemblyReference.cache
-C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\CaixaSimples\obj\Debug\RdlCompile.cache
-C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\CaixaSimples\obj\Debug\RdlCompile.compiled
 C:\particular\programa\bancomesmomano\CaixaSimples\CaixaSimples\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\particular\programa\bancomesmomano\CaixaSimples\CaixaSimples\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\particular\programa\bancomesmomano\CaixaSimples\CaixaSimples\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -248,3 +245,6 @@ C:\particular\programa\bancomesmomano\CaixaSimples\CaixaSimples\bin\Debug\pt\Mic
 C:\particular\programa\bancomesmomano\CaixaSimples\CaixaSimples\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\particular\programa\bancomesmomano\CaixaSimples\CaixaSimples\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\particular\programa\bancomesmomano\CaixaSimples\CaixaSimples\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\CaixaSimples\obj\Debug\CaixaSimples.csprojResolveAssemblyReference.cache
+C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\CaixaSimples\obj\Debug\RdlCompile.cache
+C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\CaixaSimples\obj\Debug\RdlCompile.compiled

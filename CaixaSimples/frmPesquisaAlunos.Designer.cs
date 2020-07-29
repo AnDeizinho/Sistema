@@ -32,11 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dt = new System.Windows.Forms.DataGridView();
-            this.txtnome = new System.Windows.Forms.TextBox();
-            this.cb = new System.Windows.Forms.ComboBox();
-            this.txtano = new System.Windows.Forms.TextBox();
-            this.lbl = new System.Windows.Forms.Label();
-            this.txtCC = new System.Windows.Forms.TextBox();
             this.clmIdAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +47,11 @@
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtnome = new System.Windows.Forms.TextBox();
+            this.cb = new System.Windows.Forms.ComboBox();
+            this.txtano = new System.Windows.Forms.TextBox();
+            this.lbl = new System.Windows.Forms.Label();
+            this.txtCC = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dt)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,76 +113,6 @@
             this.dt.Size = new System.Drawing.Size(893, 373);
             this.dt.TabIndex = 0;
             this.dt.TabStop = false;
-            // 
-            // txtnome
-            // 
-            this.txtnome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtnome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txtnome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtnome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnome.ForeColor = System.Drawing.Color.White;
-            this.txtnome.Location = new System.Drawing.Point(104, 50);
-            this.txtnome.Name = "txtnome";
-            this.txtnome.Size = new System.Drawing.Size(319, 26);
-            this.txtnome.TabIndex = 2;
-            this.txtnome.TextChanged += new System.EventHandler(this.txtnome_TextChanged);
-            this.txtnome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_Validating);
-            this.txtnome.Validating += new System.ComponentModel.CancelEventHandler(this.txtnome_Validating);
-            // 
-            // cb
-            // 
-            this.cb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb.ForeColor = System.Drawing.Color.White;
-            this.cb.FormattingEnabled = true;
-            this.cb.Location = new System.Drawing.Point(433, 49);
-            this.cb.Name = "cb";
-            this.cb.Size = new System.Drawing.Size(186, 28);
-            this.cb.TabIndex = 3;
-            this.cb.SelectedValueChanged += new System.EventHandler(this.cb_SelectedValueChanged);
-            this.cb.Validated += new System.EventHandler(this.cb_Validated);
-            // 
-            // txtano
-            // 
-            this.txtano.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtano.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txtano.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtano.ForeColor = System.Drawing.Color.White;
-            this.txtano.Location = new System.Drawing.Point(625, 50);
-            this.txtano.MaxLength = 4;
-            this.txtano.Name = "txtano";
-            this.txtano.Size = new System.Drawing.Size(58, 26);
-            this.txtano.TabIndex = 4;
-            this.txtano.Text = "2019";
-            // 
-            // lbl
-            // 
-            this.lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl.AutoSize = true;
-            this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.ForeColor = System.Drawing.Color.White;
-            this.lbl.Location = new System.Drawing.Point(686, 53);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(104, 20);
-            this.lbl.TabIndex = 4;
-            this.lbl.Text = "Quantidade : ";
-            // 
-            // txtCC
-            // 
-            this.txtCC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txtCC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCC.ForeColor = System.Drawing.Color.White;
-            this.txtCC.Location = new System.Drawing.Point(12, 50);
-            this.txtCC.Name = "txtCC";
-            this.txtCC.Size = new System.Drawing.Size(86, 26);
-            this.txtCC.TabIndex = 1;
-            this.txtCC.TextChanged += new System.EventHandler(this.txtCC_TextChanged);
-            this.txtCC.Validated += new System.EventHandler(this.txtCC_Validated);
             // 
             // clmIdAluno
             // 
@@ -299,6 +229,76 @@
             this.Column13.MaxInputLength = 3;
             this.Column13.Name = "Column13";
             this.Column13.ReadOnly = true;
+            // 
+            // txtnome
+            // 
+            this.txtnome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtnome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txtnome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtnome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnome.ForeColor = System.Drawing.Color.White;
+            this.txtnome.Location = new System.Drawing.Point(104, 50);
+            this.txtnome.Name = "txtnome";
+            this.txtnome.Size = new System.Drawing.Size(319, 26);
+            this.txtnome.TabIndex = 2;
+            this.txtnome.TextChanged += new System.EventHandler(this.txtnome_TextChanged);
+            this.txtnome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_Validating);
+            this.txtnome.Validating += new System.ComponentModel.CancelEventHandler(this.txtnome_Validating);
+            // 
+            // cb
+            // 
+            this.cb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb.ForeColor = System.Drawing.Color.White;
+            this.cb.FormattingEnabled = true;
+            this.cb.Location = new System.Drawing.Point(433, 49);
+            this.cb.Name = "cb";
+            this.cb.Size = new System.Drawing.Size(186, 28);
+            this.cb.TabIndex = 3;
+            this.cb.SelectedValueChanged += new System.EventHandler(this.cb_SelectedValueChanged);
+            this.cb.Validated += new System.EventHandler(this.cb_Validated);
+            // 
+            // txtano
+            // 
+            this.txtano.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtano.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txtano.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtano.ForeColor = System.Drawing.Color.White;
+            this.txtano.Location = new System.Drawing.Point(625, 50);
+            this.txtano.MaxLength = 4;
+            this.txtano.Name = "txtano";
+            this.txtano.Size = new System.Drawing.Size(58, 26);
+            this.txtano.TabIndex = 4;
+            this.txtano.Text = "2020";
+            // 
+            // lbl
+            // 
+            this.lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl.AutoSize = true;
+            this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl.ForeColor = System.Drawing.Color.White;
+            this.lbl.Location = new System.Drawing.Point(686, 53);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(104, 20);
+            this.lbl.TabIndex = 4;
+            this.lbl.Text = "Quantidade : ";
+            // 
+            // txtCC
+            // 
+            this.txtCC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txtCC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCC.ForeColor = System.Drawing.Color.White;
+            this.txtCC.Location = new System.Drawing.Point(12, 50);
+            this.txtCC.Name = "txtCC";
+            this.txtCC.Size = new System.Drawing.Size(86, 26);
+            this.txtCC.TabIndex = 1;
+            this.txtCC.TextChanged += new System.EventHandler(this.txtCC_TextChanged);
+            this.txtCC.Validated += new System.EventHandler(this.txtCC_Validated);
             // 
             // frmPesquisaAlunos
             // 
