@@ -60,6 +60,24 @@ namespace SistemaShekinahCompleto.Entidades
             }
         }
     }
+    public  class  GetSerie
+    {
+        public string Serie{ get;private set;}
+        public GetSerie(int id_ano)
+        {
+            switch (id_ano)
+            {
+                case 1: Serie = "1 Serie";
+                    break;
+                case 2: Serie = "2 Serie"; break;
+                case 3: Serie = "3 Serie"; break;
+                case 4: Serie = "4 Serie"; break;
+                case 5: Serie = "5 Serie"; break;
+                default: throw new IndexOutOfRangeException("indice fora do intervalo");
+                    break;
+            }
+        }
+    }
     public enum Turno { Matutino = 1, Vespertino =2 }
-    public enum Niveis { Fundamental = 1, Infantil = 2 }
+    public enum Niveis { Fundamental = 2, Infantil = 1 }
 }

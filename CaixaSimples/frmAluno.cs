@@ -122,10 +122,12 @@ namespace CaixaSimples
         private void btnturma_Click(object sender, EventArgs e)
         {
             
-            Controles.SelecionarTurma ctr = new Controles.SelecionarTurma();
+            Controles.SelecionarTurma ctr = new Controles.SelecionarTurma(txtAno.Text);
             ctr.ShowDialog();
             aluno.turma = ctr.Turma;
-            cbTurma.Text = aluno.turma.ToString();
+            if(aluno.turma != null)
+                cbTurma.Text = aluno.turma.ToString();
+
             
         }
        

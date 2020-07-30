@@ -11,7 +11,145 @@ namespace SistemaShekinahCompleto.Model
 {
     public class DbAlunos
     {
-        
+        public void RenovarMatricula(AtaFinalEnt bi)
+        {
+            Conexao con = new Conexao();
+            SqlCommand cmd = new SqlCommand(@"insert into tbl_Notas values(
+            @id_aluno
+           ,@ano
+           ,@port
+           ,@mat
+           ,@hist
+           ,@geog
+           ,@ciencia
+           ,@arte
+           ,@religiao
+           ,@ingles
+           ,@fisica
+           ,@ap
+           ,@r
+           ,@des
+           ,@tr
+           ,@faltas
+           ,@id_turma
+           ,@Serie
+           ,@Instituicao)", con.NovaConexaoBdAtaFinal());
+            try
+            {
+                //bi.b1 = new BimestreEnt(0, bi.Id_Aluno, bi.Id_Turma, 0, 1, bi.Ano, bi.Serie);
+                //bi.b2 = new BimestreEnt(0, bi.Id_Aluno, bi.Id_Turma, 0, 2, bi.Ano, bi.Serie);
+                //bi.b3 = new BimestreEnt(0, bi.Id_Aluno, bi.Id_Turma, 0, 3, bi.Ano, bi.Serie);
+                //bi.b4 = new BimestreEnt(0, bi.Id_Aluno, bi.Id_Turma, 0, 4, bi.Ano, bi.Serie);
+                CadBi(bi.b1);
+                CadBi(bi.b2);
+                CadBi(bi.b3);
+                CadBi(bi.b4);
+                cmd.Parameters.AddWithValue("@id_aluno", bi.Id_Aluno);
+                cmd.Parameters.AddWithValue("@ano", bi.Ano);
+                cmd.Parameters.AddWithValue("@port", bi.Portugues.Nota);
+                cmd.Parameters.AddWithValue("@mat", bi.Matematica.Nota);
+                cmd.Parameters.AddWithValue("@hist", bi.Historia.Nota);
+                cmd.Parameters.AddWithValue("@geog", bi.Geografia.Nota);
+                cmd.Parameters.AddWithValue("@ciencia", bi.Ciencia.Nota);
+                cmd.Parameters.AddWithValue("@arte", bi.Artes.Nota);
+                cmd.Parameters.AddWithValue("@religiao", bi.Religiao.Nota);
+                cmd.Parameters.AddWithValue("@ingles", bi.Ingles.Nota);
+                cmd.Parameters.AddWithValue("@fisica", bi.Fisica.Nota);
+                cmd.Parameters.AddWithValue("@ap", bi.Ap);
+                cmd.Parameters.AddWithValue("@r", bi.R);
+                cmd.Parameters.AddWithValue("@des", bi.Des);
+                cmd.Parameters.AddWithValue("@tr", bi.Tr);
+                cmd.Parameters.AddWithValue("@faltas", bi.Faltas);
+                cmd.Parameters.AddWithValue("@Serie", bi.Serie);
+                cmd.Parameters.AddWithValue("@id_turma", bi.Id_Turma);
+                cmd.Parameters.AddWithValue("@Instituicao", bi.Instituicao);
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+            catch(Exception erro)
+            {
+                throw erro;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+                cmd.Connection.Dispose();
+                cmd.Dispose();
+            }
+        }
+        void CadBi(BimestreEnt bi)
+        {
+            Conexao con = new Conexao();
+            SqlCommand cmd = new SqlCommand(@"insert into tbl_bimestre ([id_aluno]
+           ,[ano]
+           ,[port]
+           ,[mat]
+           ,[hist]
+           ,[geog]
+           ,[ciencia]
+           ,[arte]
+           ,[religiao]
+           ,[ingles]
+           ,[fisica]
+           ,[ap]
+           ,[r]
+           ,[faltas]
+           ,[Bimestre]
+           ,[id_turma]
+           ,[Serie])
+            values(
+            @id_aluno
+           ,@ano
+           ,@port
+           ,@mat
+           ,@hist
+           ,@geog
+           ,@ciencia
+           ,@arte
+           ,@religiao
+           ,@ingles
+           ,@fisica
+           ,@ap
+           ,@r
+           ,@faltas
+           ,@Bimestre
+           ,@id_turma,@Serie)", con.NovaConexaoBdAtaFinal());
+            try
+            {
+                   cmd.Parameters.AddWithValue("@id_aluno",bi.Id_Aluno);
+                   cmd.Parameters.AddWithValue("@ano",bi.Ano);
+                   cmd.Parameters.AddWithValue("@port",bi.Portugues.Nota);
+                   cmd.Parameters.AddWithValue("@mat", bi.Matematica.Nota);
+                   cmd.Parameters.AddWithValue("@hist",bi.Historia.Nota);
+                   cmd.Parameters.AddWithValue("@geog",bi.Geografia.Nota);
+                   cmd.Parameters.AddWithValue("@ciencia",bi.Ciencia.Nota);
+                   cmd.Parameters.AddWithValue("@arte",bi.Artes.Nota);
+                   cmd.Parameters.AddWithValue("@religiao",bi.Religiao.Nota);
+                   cmd.Parameters.AddWithValue("@ingles",bi.Ingles.Nota);
+                   cmd.Parameters.AddWithValue("@fisica",bi.Fisica.Nota);
+                   cmd.Parameters.AddWithValue("@ap",bi.Ap);
+                   cmd.Parameters.AddWithValue("@r",bi.R);
+                   cmd.Parameters.AddWithValue("@faltas",bi.Faltas);
+                   cmd.Parameters.AddWithValue("@Bimestre",bi.Bimestre);
+                   cmd.Parameters.AddWithValue("@id_turma",bi.Id_Turma);
+                   cmd.Parameters.AddWithValue("@Serie", bi.Serie);
+                   cmd.Connection.Open();
+                   cmd.ExecuteNonQuery();
+                   
+
+            }
+            catch(Exception erro)
+            {
+                throw erro;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+                cmd.Connection.Dispose();
+                cmd.Dispose();
+            }
+        }
         public AlunosEnt SelectAlunos(string strCommando, int id_turma)
         {
             AlunosEnt alunos = new AlunosEnt();
@@ -166,7 +304,40 @@ namespace SistemaShekinahCompleto.Model
             try
             {
                 SqlCommand cmd = new SqlCommand("sp_InsertAlunos", con.NovaConexaoBdAtaFinal());
-                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = @"
+                                    if(select count(nome) from tbl_alunos where nome = @nome) > 0
+                                        print ('já existe um aluno com este nome')
+                                    else
+
+                                    INSERT INTO [dbo].[tbl_Alunos]
+                                   ([nome]
+                                   ,[id_cliente]
+                                   ,[ano_recente]
+                                   ,[id_turma]
+                                   ,[nascimento]
+                                   ,[sexo]
+                                   ,[naturalidade]
+                                   ,[uf]
+                                   ,[dadosClinicos]
+                                   ,[remedios]
+                                   ,[id_mac]
+                                   ,[integral]) 
+                                    
+                                    values (
+                                    @nome
+                                   ,@id_cliente
+                                   ,@ano_recente
+                                   ,@id_turma
+                                   ,@nascimento
+                                   ,@sexo
+                                   ,@naturalidade
+                                   ,@uf
+                                   ,@dadosClinicos
+                                   ,@remedios
+                                   ,@id_mac
+                                   ,@integral)
+                                    ";
+                cmd.Parameters.AddWithValue("@id_aluno", aluno.id_aluno);
                 cmd.Parameters.AddWithValue("@nome", aluno.nome);
                 cmd.Parameters.AddWithValue("@id_cliente", aluno.id_cliente);
                 cmd.Parameters.AddWithValue("@ano_recente", aluno.ano_recente);
@@ -182,11 +353,18 @@ namespace SistemaShekinahCompleto.Model
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = "select id_aluno from tbl_alunos where nome = @nome and id_cliente = @id_cliente";
+                
                 cmd.CommandType = CommandType.Text;
                 SqlDataReader li = cmd.ExecuteReader();
                 while (li.Read())
                     aluno.id_aluno = int.Parse(li[0].ToString());
-                cmd.Clone();
+                cmd.Connection.Close();
+                if (aluno.turma.Ano.id_nivel == Niveis.Fundamental)
+                {
+                    AtaFinalEnt ata = new AtaFinalEnt(aluno, new GetSerie(aluno.turma.Ano.id_Ano).Serie);
+                    RenovarMatricula(ata);
+                }
+
                 return con.mensagens;
 
             }

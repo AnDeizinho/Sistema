@@ -107,13 +107,13 @@ namespace SistemaShekinahCompleto.Model
             }
 
         }
-        public TurmasEnt SelecionarTurmas(string strcomand ,string ano) 
+        public TurmasEnt SelecionarTurmas(string ano,string strcomand , CommandType tipo = CommandType.StoredProcedure) 
         { 
             TurmasEnt alunos = new TurmasEnt();
             TurmaEnt aluno;
             Conexao com = new Conexao();
             SqlDataAdapter adp = new SqlDataAdapter(strcomand, com.NovaConexaoBdAtaFinal());
-            adp.SelectCommand.CommandType = CommandType.StoredProcedure;
+            adp.SelectCommand.CommandType = tipo;
             adp.SelectCommand.Parameters.AddWithValue("@ano", Convert.ToInt32(ano));
             adp.SelectCommand.Connection.Open();
             SqlDataReader leitor = adp.SelectCommand.ExecuteReader();

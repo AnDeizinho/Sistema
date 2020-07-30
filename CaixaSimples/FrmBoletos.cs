@@ -198,7 +198,7 @@ namespace CaixaSimples
             DataVencimento.Enabled = false;
             try
             {
-                AtualizaBoleto(txtboleto.Text, Convert.ToDouble(txtminimo.Text), id_Cliente, DataVencimento.Value.Date, txtTaxa.Text == "" ? 0 : Convert.ToDouble(txtTaxa.Text));
+                AtualizaBoleto(txtboleto.Text, Convert.ToDouble(txtminimo.Text), id_Cliente, DataVencimento.Value.Date, Convert.ToDouble(txtTaxa.Text));
                 AtualizaBoleto(id_mensalidade, DataVencimento.Value.Date);
                 textBox3_Validated(null, null);
             }

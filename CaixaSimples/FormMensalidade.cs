@@ -31,15 +31,14 @@ namespace CaixaSimples
         {
             txtCC.Text = "" + id_Cliente;
             cbano.SelectedIndex = 1;
-            TurmasEnt tur = new TurmasDAO().SelectTurmas("2019");
-            adapt = new adp("select id_turma, descricao from tbl_turma where ano = '2019'");
+            
+            adapt = new adp(string.Format("select id_turma, descricao from tbl_turma where ano = '{0}'", cbano.Text));
             adapt.Preencher(tbl_turma);
-            foreach (TurmaEnt linha in tur)
+            foreach (DataRow linha in tbl_turma.Rows)
             {
-                cbSerie.Items.Add(linha);
+                cbSerie.Items.Add(linha["descricao"].ToString());
             }
-            cbSerie.DisplayMember = "descricao";
-            cbSerie.ValueMember = "id_Turma";
+           
 
 
             //MessageBox.Show(DateTime.Now.Month.ToString());
