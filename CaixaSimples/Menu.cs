@@ -22,10 +22,11 @@ namespace CaixaSimples
         DataTable tblRSaidas = new DataTable();
         public frmMenu()
         {
-            
+           
             InitializeComponent();
+            
         }
-        private async void inicia(DateTime DataDoCaixa)
+        private void inicia(DateTime DataDoCaixa)
         {
                 
                 lblDinheiro.Text = "Dinheiro: R$ ";
@@ -356,7 +357,7 @@ namespace CaixaSimples
         private void btn_Pesquisar_Click(object sender, EventArgs e)
         {
             frmPesquisaAlunos pesq = new frmPesquisaAlunos();
-            pesq.ShowDialog();
+            pesq.Show();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)

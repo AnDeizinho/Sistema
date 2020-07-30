@@ -680,7 +680,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.Margin = new System.Windows.Forms.Padding(11, 8, 11, 8);
             this.Name = "FrmBoletos";
+            this.ShowInTaskbar = true;
             this.Text = "Boletos";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FrmBoletos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tblMesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSBoletosBindingSource)).EndInit();
