@@ -52,6 +52,7 @@ namespace LancaoNotaForm
             catch
             {
                 MessageBox.Show("erro na comunicação com o servidor");
+
             }
         }
 

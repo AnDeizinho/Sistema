@@ -11,10 +11,10 @@ namespace LancaoNotaForm
     class Listar
     {
         string strCmd = @"SELECT [id_Bimestre]
-      ,tbl_Bimestre2.[id_aluno]
+      ,tbl_Bimestre.[id_aluno]
       ,tbl_Alunos.nome
       ,tbl_turma.descricao
-      ,tbl_Bimestre2.[ano]
+      ,tbl_Bimestre.[ano]
       ,[port]
       ,[mat]
       ,[hist]
@@ -29,9 +29,9 @@ namespace LancaoNotaForm
       ,[faltas]
       ,[Bimestre]
         ,Serie
-  FROM [tbl_Bimestre2]
-  join tbl_Alunos on tbl_Bimestre2.id_aluno = tbl_alunos.id_aluno
-  join tbl_turma on tbl_bimestre2.id_turma = tbl_turma.id_turma 
+  FROM [tbl_Bimestre]
+  join tbl_Alunos on tbl_Bimestre.id_aluno = tbl_alunos.id_aluno
+  join tbl_turma on tbl_bimestre.id_turma = tbl_turma.id_turma 
   join tbl_professor on tbl_turma.id_professor = tbl_professor.id_prof
   ";
         string final = "order by descricao, nome";
@@ -42,7 +42,7 @@ namespace LancaoNotaForm
             str.Append(strCmd);
             str.AppendLine("where tbl_Turma.id_professor = ");
             str.Append(prof.getId());
-            str.AppendLine(string.Format("and tbl_bimestre2.ano = '{0}'", ano));
+            str.AppendLine(string.Format("and tbl_bimestre.ano = '{0}'", ano));
             str.AppendLine(final);
 
             SqlDataAdapter adp = new SqlDataAdapter(str.ToString(), conexao);
@@ -54,7 +54,7 @@ namespace LancaoNotaForm
         }
         public DataTable ListaAdm( SqlConnection conexao, DataTable tbl, string ano)
         {
-            SqlDataAdapter adp = new SqlDataAdapter(string.Format("{0} \n{1}\n{2}",strCmd, string.Format("where tbl_bimestre2.ano = '{0}'",ano), final), conexao);
+            SqlDataAdapter adp = new SqlDataAdapter(string.Format("{0} \n{1}\n{2}",strCmd, string.Format("where tbl_bimestre.ano = '{0}'",ano), final), conexao);
             tbl.Clear();
             adp.Fill(tbl);
             
@@ -75,7 +75,7 @@ namespace LancaoNotaForm
             {
                 StringBuilder str = new StringBuilder();
                 str.Append(strCmd);
-                str.AppendLine("where bimestre = " + bimestre + " and tbl_bimestre2.ano = '"+ ano+"'");
+                str.AppendLine("where bimestre = " + bimestre + " and tbl_bimestre.ano = '"+ ano+"'");
                 
                 //str.Append(bimestre);
                 str.AppendLine(final);
@@ -92,7 +92,7 @@ namespace LancaoNotaForm
                 str.Append(strCmd);
                 str.AppendLine("where tbl_Turma.id_Professor = " + idProf);
                 //str.Append(idProf);
-                str.AppendLine("and bimestre = " + bimestre + string.Format(" and tbl_bimestre2.ano = '{0}'", ano));
+                str.AppendLine("and bimestre = " + bimestre + string.Format(" and tbl_bimestre.ano = '{0}'", ano));
                 //str.Append(bimestre);
                 str.AppendLine(final);
 
@@ -106,7 +106,7 @@ namespace LancaoNotaForm
             {
                 StringBuilder str = new StringBuilder();
                 str.Append(strCmd);
-                str.AppendLine("where bimestre = " + bimestre + string.Format(" and tbl_bimestre2.ano = '{0}'", ano));
+                str.AppendLine("where bimestre = " + bimestre + string.Format(" and tbl_bimestre.ano = '{0}'", ano));
 
                 //str.Append(bimestre);
                 str.AppendLine(final);
@@ -130,10 +130,10 @@ namespace LancaoNotaForm
             {
                 StringBuilder str = new StringBuilder();
                 str.Append(strCmd);
-                str.AppendLine(string.Format("where bimestre = {0} and tbl_bimestre2.ano = '{1}'",  bimestre, ano));
+                str.AppendLine(string.Format("where bimestre = {0} and tbl_bimestre.ano = '{1}'",  bimestre, ano));
 
                 //str.Append(bimestre);
-                str.AppendLine("and tbl_bimestre2.id_turma = " + id_turma);
+                str.AppendLine("and tbl_bimestre.id_turma = " + id_turma);
                 //str.Append(id_turma);
                 str.AppendLine(final);
 
@@ -152,7 +152,7 @@ namespace LancaoNotaForm
                 //str.Append(idProf);
                 str.AppendLine("and bimestre = " + bimestre);
                 //str.Append(bimestre);
-                str.AppendLine(string.Format("and tbl_bimestre2.id_turma = {0} and tbl_bimestre2.ano = {1} " , id_turma, ano));
+                str.AppendLine(string.Format("and tbl_bimestre.id_turma = {0} and tbl_bimestre.ano = {1} " , id_turma, ano));
                 //str.Append(id_turma);
                 str.AppendLine(final);
 
@@ -169,7 +169,7 @@ namespace LancaoNotaForm
                 str.AppendLine("where bimestre = " + bimestre);
 
                 //str.Append(bimestre);
-                str.AppendLine(string.Format("and tbl_bimestre2.id_turma = {0} and tbl_bimestre2.ano = {1}" , id_turma, ano));
+                str.AppendLine(string.Format("and tbl_bimestre.id_turma = {0} and tbl_bimestre.ano = {1}" , id_turma, ano));
                 //str.Append(id_turma);
                 str.AppendLine(final);
 
@@ -198,7 +198,7 @@ namespace LancaoNotaForm
                 StringBuilder str = new StringBuilder();
                 str.Append(strCmd);
                 
-                str.AppendLine(string.Format("where tbl_bimestre2.id_turma = {0} and tbl_bimestre2.ano = '{1}'" , id_turma , ano));
+                str.AppendLine(string.Format("where tbl_bimestre.id_turma = {0} and tbl_bimestre.ano = '{1}'" , id_turma , ano));
                 //str.Append(id_turma);
                 str.AppendLine(final);
 
@@ -212,10 +212,10 @@ namespace LancaoNotaForm
             {
                 StringBuilder str = new StringBuilder();
                 str.Append(strCmd);
-                str.AppendLine(string.Format("where tbl_Turma.id_Professor = {0} and tbl_Bimestre2.ano = '{1}'" , idProf, ano));
+                str.AppendLine(string.Format("where tbl_Turma.id_Professor = {0} and tbl_Bimestre.ano = '{1}'" , idProf, ano));
                 //str.Append(idProf);
                 
-                str.AppendLine("and tbl_bimestre2.id_turma = " + id_turma);
+                str.AppendLine("and tbl_bimestre.id_turma = " + id_turma);
                 //str.Append(id_turma);
                 str.AppendLine(final);
 
@@ -229,7 +229,7 @@ namespace LancaoNotaForm
                 StringBuilder str = new StringBuilder();
                 str.Append(strCmd);
                 
-                str.AppendLine("where tbl_bimestre.id_turma = " + id_turma + string.Format(" and tbl_bimestre2.ano = '{1}'", ano));
+                str.AppendLine("where tbl_bimestre.id_turma = " + id_turma + string.Format(" and tbl_bimestre.ano = '{1}'", ano));
                 //str.Append(id_turma);
                 str.AppendLine(final);
 
@@ -258,7 +258,7 @@ namespace LancaoNotaForm
                 StringBuilder str = new StringBuilder();
                 str.Append(strCmd);
 
-                str.AppendLine(string.Format("where nome like '%{0}%' and tbl_bimestre2.ano = '{1}'", aluno, ano));
+                str.AppendLine(string.Format("where nome like '%{0}%' and tbl_bimestre.ano = '{1}'", aluno, ano));
                 //str.Append(aluno);
                 //str.Append("%'");
                 str.AppendLine(final);
@@ -276,7 +276,7 @@ namespace LancaoNotaForm
                 str.AppendLine("where tbl_Turma.id_Professor = " + idProf);
                 //str.Append(idProf);
 
-                str.AppendLine(string.Format("and nome like '%{0}%' and tbl_bimestre2.ano = '{1}'", aluno, ano));
+                str.AppendLine(string.Format("and nome like '%{0}%' and tbl_bimestre.ano = '{1}'", aluno, ano));
                 //str.Append(aluno);
                 //str.Append("%'");
                 str.AppendLine(final);
@@ -292,7 +292,7 @@ namespace LancaoNotaForm
                 StringBuilder str = new StringBuilder();
                 str.Append(strCmd);
 
-                str.AppendLine("where nome like '%" + aluno + "%'" + string.Format(" and tbl_bimestre2.ano = '{0}'", ano));
+                str.AppendLine("where nome like '%" + aluno + "%'" + string.Format(" and tbl_bimestre.ano = '{0}'", ano));
                 //str.Append(aluno);
                 //str.Append("%'");
                 str.AppendLine(final);
@@ -319,7 +319,7 @@ namespace LancaoNotaForm
                 str.AppendLine("where bimestre = " + bimestre + " ");
 
 
-                str.AppendLine(string.Format("and tbl_bimestre2.ano = '{0}' ", ano));
+                str.AppendLine(string.Format("and tbl_bimestre.ano = '{0}' ", ano));
 
                 str.AppendLine("and tbl_alunos.nome like '%" + aluno + "%'");
 
@@ -343,7 +343,7 @@ namespace LancaoNotaForm
                 //str.AppendLine("and tbl_turma.id_turma = " + id_turma);
                 //str.Append(id_turma);
                 str.AppendLine("and tbl_alunos.nome like '%" + aluno + "%'");
-                str.AppendLine(string.Format("and tbl_bimestre2.ano = '{0}'", ano));
+                str.AppendLine(string.Format("and tbl_bimestre.ano = '{0}'", ano));
                 //str.Append("%'");
                 str.AppendLine(final);
 
@@ -391,10 +391,10 @@ namespace LancaoNotaForm
                 //str.AppendLine("where bimestre = " + bimestre + " ");
 
 
-                str.AppendLine("where tbl_bimestre2.id_turma = " + id_turma);
+                str.AppendLine("where tbl_bimestre.id_turma = " + id_turma);
 
                 str.AppendLine("and tbl_alunos.nome like '%" + aluno + "%'");
-                str.AppendLine(string.Format("and tbl_bimestre2.ano ='{0}'", ano));
+                str.AppendLine(string.Format("and tbl_bimestre.ano ='{0}'", ano));
 
                 str.AppendLine(final);
                 //MessageBox.Show(str.ToString());
@@ -413,10 +413,10 @@ namespace LancaoNotaForm
                 //str.Append(idProf);
                 //str.AppendLine("and bimestre = " + bimestre);
                 //str.Append(bimestre);
-                str.AppendLine("and tbl_bimestre2.id_turma = " + id_turma);
+                str.AppendLine("and tbl_bimestre.id_turma = " + id_turma);
                 //str.Append(id_turma);
                 str.AppendLine("and tbl_alunos.nome like '%" + aluno + "%'");
-                str.AppendLine(string.Format("and tbl_bimestre2.ano = '{0}'", ano));
+                str.AppendLine(string.Format("and tbl_bimestre.ano = '{0}'", ano));
                 //str.Append("%'");
                 str.AppendLine(final);
 
@@ -433,10 +433,10 @@ namespace LancaoNotaForm
                 //str.AppendLine("where bimestre = " + bimestre);
 
                 //str.Append(bimestre);
-                str.AppendLine("where tbl_bimestre2.id_turma = " + id_turma);
+                str.AppendLine("where tbl_bimestre.id_turma = " + id_turma);
                 //str.Append(id_turma);
                 str.AppendLine("and tbl_alunos.nome like '%" + aluno + "%'");
-                str.AppendLine(string.Format("and tbl_bimestre2.ano = '{0}'", ano));
+                str.AppendLine(string.Format("and tbl_bimestre.ano = '{0}'", ano));
                 //str.Append("%'");
                 str.AppendLine(final);
 
@@ -467,11 +467,11 @@ namespace LancaoNotaForm
                 str.AppendLine("where bimestre = " + bimestre + " ");
 
                 
-                str.AppendLine("and tbl_bimestre2.id_turma = " + id_turma);
+                str.AppendLine("and tbl_bimestre.id_turma = " + id_turma);
                 
                 str.AppendLine("and tbl_alunos.nome like '%" + aluno + "%'");
 
-                str.AppendLine(string.Format("and tbl_bimestre2.ano = '{0}'",ano));
+                str.AppendLine(string.Format("and tbl_bimestre.ano = '{0}'",ano));
                 
                 str.AppendLine(final);
                 //MessageBox.Show(str.ToString());
@@ -490,11 +490,11 @@ namespace LancaoNotaForm
                 //str.Append(idProf);
                 str.AppendLine("and bimestre = " + bimestre);
                 //str.Append(bimestre);
-                str.AppendLine("and tbl_bimestre2.id_turma = " + id_turma);
+                str.AppendLine("and tbl_bimestre.id_turma = " + id_turma);
                 //str.Append(id_turma);
                 str.AppendLine("and tbl_alunos.nome like '%" + aluno + "%'");
                 //str.Append(aluno);
-                str.AppendLine(string.Format("and tbl_bimestre2.ano = '{0}'", ano));
+                str.AppendLine(string.Format("and tbl_bimestre.ano = '{0}'", ano));
                 //str.Append("%'");
                 str.AppendLine(final);
 
@@ -511,12 +511,12 @@ namespace LancaoNotaForm
                 str.AppendLine("where bimestre = " + bimestre);
 
                 //str.Append(bimestre);
-                str.AppendLine("and tbl_bimestre2.id_turma = " + id_turma);
+                str.AppendLine("and tbl_bimestre.id_turma = " + id_turma);
                 //str.Append(id_turma);
                 str.AppendLine("and tbl_alunos.nome like '%" + aluno + "%'");
                 //str.Append(aluno);
                 //str.Append("%'");
-                str.AppendLine(string.Format("and tbl_bimestre2.ano = '{0}'", ano));
+                str.AppendLine(string.Format("and tbl_bimestre.ano = '{0}'", ano));
                 str.AppendLine(final);
 
                 tbl.Clear();

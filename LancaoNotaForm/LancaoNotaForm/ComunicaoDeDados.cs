@@ -32,7 +32,7 @@ namespace LancaoNotaForm
       ,[r]
       ,[faltas]
       ,[Bimestre]
-  FROM [BDAtaFinal].[dbo].[tbl_Bimestre2] where id_aluno = " + idAluno);
+  FROM [BDAtaFinal].[dbo].[tbl_Bimestre] where id_aluno = " + idAluno);
                 select.AppendLine("and ano = '"+ ano +"'");
                 SqlDataAdapter adp = new SqlDataAdapter(select.ToString(), conexao);
                 DataTable tbl = new DataTable();

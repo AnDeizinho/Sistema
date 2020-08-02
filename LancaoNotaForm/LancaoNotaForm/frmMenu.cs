@@ -106,7 +106,7 @@ namespace LancaoNotaForm
   FROM [tbl_turma] 
   join tblAno on tblAno.id_Ano = tbl_turma.id_ano
   join tbl_Niveis on tbl_Niveis.id_Nivel = tblano.id_nivel
-  where tblAno.id_nivel = 2 and id_professor = " + prof.getId(), conexao);
+  where tblAno.id_nivel = 2 and id_professor = " + prof.getId() + "and tbl_turma.ano = '"+txtano.Text+"'", conexao);
                     adp.Fill(tblTurma);
                     for (int index = 0; index < tblTurma.Rows.Count; index++)
                     {
@@ -122,7 +122,7 @@ namespace LancaoNotaForm
   FROM [tbl_turma] 
   join tblAno on tblAno.id_Ano = tbl_turma.id_ano
   join tbl_Niveis on tbl_Niveis.id_Nivel = tblano.id_nivel
-  where tblAno.id_nivel = 2 ", conexao);
+  where tblAno.id_nivel = 2 and tbl_turma.ano = '" + txtano.Text + "'", conexao);
                     adp.Fill(tblTurma);
                     for (int index = 0; index < tblTurma.Rows.Count; index++)
                     {
