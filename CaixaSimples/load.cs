@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using SistemaShekinahCompleto.Model;
 namespace CaixaSimples
 {
     public partial class frmLogin : Form
@@ -53,7 +53,26 @@ namespace CaixaSimples
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            Conexao Co = new Conexao();
+            System.Data.SqlClient.SqlConnection con1, con2;
+            con1 = Co.NovaConexaoBdCaixa();
+            con2 = Co.NovaConexaoBdAtaFinal();
+            try
+            {
+                con1.Open();
+                con2.Open();
 
+            }
+            catch(System.Data.SqlClient.SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                Application.Exit();
+            }
+            finally
+            {
+                con1.Close(); con2.Close(); con1.Dispose(); con2.Dispose();
+            }
+                
         }
 
         //private void frmLogin_Enter(object sender, EventArgs e)

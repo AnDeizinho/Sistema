@@ -154,6 +154,12 @@
     <Compile Include="Controles\FrmDialogo.Designer.cs">
       <DependentUpon>FrmDialogo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\inicial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\inicial.Designer.cs">
+      <DependentUpon>inicial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\SelecionarTurma.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -346,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\FrmDialogo.resx">
       <DependentUpon>FrmDialogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\inicial.resx">
+      <DependentUpon>inicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\SelecionarTurma.resx">
       <DependentUpon>SelecionarTurma.cs</DependentUpon>

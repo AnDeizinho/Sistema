@@ -5,11 +5,34 @@ using System.Text;
 using System.Data;
 using SistemaShekinahCompleto.Model;
 using SistemaShekinahCompleto.Entidades;
+using System.Data.SqlClient;
 namespace SistemaShekinahCompleto.DAO
 {
     public class AlunosDAO
     {
         DbAlunos alunos = new DbAlunos();
+        public void RenovarMatricula(AlunoEnt al)
+        {
+            SqlCommand cmd = new SqlCommand(string.Format("select count(id_aluno) from tbl_notas where ano = {0} and id_aluno = {1}", al.ano_recente, al.id_aluno), new Conexao().NovaConexaoBdAtaFinal());
+            try
+            {
+                cmd.Connection.Open();
+                int valor = (int)cmd.ExecuteScalar();
+                if (valor > 0)
+                    throw new Exception("aluno já renovou matrícula");
+                alunos.RenovarMatricula(new AtaFinalEnt(al, new GetSerie(al.turma.Ano.id_Ano).Serie));
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+                cmd.Connection.Dispose();
+                cmd.Dispose();
+            }
+        }
         public AlunoEnt SelectPorId(int id)
         {
             try

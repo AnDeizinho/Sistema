@@ -53,6 +53,7 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.btnHome = new System.Windows.Forms.ToolStripButton();
             this.btnRelatorio = new System.Windows.Forms.ToolStripButton();
             this.btnDeposito = new System.Windows.Forms.ToolStripButton();
             this.btnProdutos = new System.Windows.Forms.ToolStripButton();
@@ -70,6 +71,7 @@
             this.toolStrip1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnHome,
             this.btnMensalidade,
             this.btnRelatorio,
             this.btnDeposito,
@@ -338,6 +340,15 @@
             this.toolStripButton3.Text = "gerenciar turmas";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
+            // btnHome
+            // 
+            this.btnHome.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
+            this.btnHome.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(69, 27);
+            this.btnHome.Text = "Home";
+            // 
             // btnRelatorio
             // 
             this.btnRelatorio.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -440,10 +451,10 @@
             this.ForeColor = System.Drawing.Color.Navy;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -487,6 +498,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.Integration.ElementHost Elemento;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton btnHome;
 
 
     }

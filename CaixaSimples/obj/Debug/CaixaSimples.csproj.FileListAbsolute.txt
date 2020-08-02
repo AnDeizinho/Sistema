@@ -248,3 +248,5 @@ C:\particular\programa\bancomesmomano\CaixaSimples\CaixaSimples\bin\Debug\zh-CHT
 C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\CaixaSimples\obj\Debug\CaixaSimples.csprojResolveAssemblyReference.cache
 C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\CaixaSimples\obj\Debug\RdlCompile.cache
 C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\CaixaSimples\obj\Debug\RdlCompile.compiled
+C:\particular\programa\bancomesmomano\CaixaSimples\CaixaSimples\obj\Debug\CaixaSimples.Controles.inicial.resources
+C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\CaixaSimples\obj\Debug\CaixaSimples.Controles.inicial.resources

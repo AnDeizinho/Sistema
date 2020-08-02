@@ -130,6 +130,21 @@ namespace CaixaSimples
 
             
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            alunoDAO = new AlunosDAO();
+            try
+            {
+                CarregaAluno(aluno);
+                alunoDAO.RenovarMatricula(aluno);
+                MessageBox.Show(string.Format("matricula renovada com sucesso para estudar no ano de {0} no {1}", aluno.ano_recente, aluno.turma.descricao));
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        }
        
        
     }

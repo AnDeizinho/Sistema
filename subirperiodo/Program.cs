@@ -35,44 +35,36 @@ namespace subirperiodo
     {
         static void Main(string[] args)
         {
-//            SqlDataAdapter adp = new SqlDataAdapter(@"SELECT TOP (1000) [id_aluno]
-//      ,[nome]
-//      ,[id_cliente]
-//      ,[ano_recente]
-//      ,a.[id_turma]
-//	  ,descricao
-//      ,[nascimento]
-//      ,[sexo]
-//      ,[naturalidade]
-//      ,[uf]
-//      ,[dadosClinicos]
-//      ,[remedios]
-//      ,[id_mac]
-//      ,[integral]
-//  FROM [BDAtaFinal].[dbo].[tbl_Alunos] as a join tbl_turma as b on a.id_turma = b.id_turma
-//  where id_aluno in (69, 77, 93, 98, 106, 109 ,144 ,157 , 158, 223,230,231,263,268,290,297,322,327,353,
-// 368,303,306,226,228,24,32,42,222,115 ) order by a.id_turma", new Conexao().NovaConexaoBdAtaFinal());
-//            AlunosEnt aluno = new AlunosEnt();
-//            adp.SelectCommand.Connection.Open();
-//            SqlDataReader leitor =  adp.SelectCommand.ExecuteReader();
-//            while(leitor.Read())
+//            SqlDataAdapter adp = new SqlDataAdapter(@"SELECT TOP (1000) 
+//      a.[id_aluno],
+//	  b.id_turma,
+//	  b.ano_recente
+//	  ,c.id_ano
+//      
+//  FROM [BDAtaFinal].[dbo].[tbl_Bimestre] a
+//  join tbl_Alunos b on a.id_aluno = b.id_aluno
+//	join tbl_turma c on b.id_turma = c.id_turma
+//  where ano_recente = '2020' and a.ano = 2019
+//  group by a.id_aluno, b.id_turma, b.ano_recente, c.id_ano", new Conexao().NovaConexaoBdAtaFinal());
+//            DataTable tbl = new DataTable();
+//            adp.Fill(tbl);
+//            DbAlunos db = new DbAlunos();
+//            foreach (DataRow i in tbl.Rows)
 //            {
-//                aluno.Add(leitor.ParaAluno());
+//                AlunoEnt al = new AlunoEnt();
+//                al.id_aluno = int.Parse(i[0].ToString());
+//                al.turma.id_turma = int.Parse(i[1].ToString());
+//                al.ano_recente = i[2].ToString().Trim();
+//                al.turma.Ano.id_Ano = int.Parse(i[3].ToString());
+//                Console.WriteLine(al);
+//                try{
+//                db.RenovarMatricula(new AtaFinalEnt(al, new GetSerie(al.turma.Ano.id_Ano).Serie));
+//                }catch(Exception erro)
+//                {
+//                    Console.WriteLine(erro.Message);
+//                    Console.ReadKey();
+//                }
 //            }
-//            adp.SelectCommand.Connection.Close();
-//            Console.WriteLine(aluno.Count.ToString());
-//            DbAlunos al = new DbAlunos();
-//            foreach (AlunoEnt i in aluno)
-//            {
-//                if (i.turma.id_turma == 19)
-//                    i.turma.id_turma = 1;
-//                else if (i.turma.id_turma == 20)
-//                    i.turma.id_turma = 2;
-//                i.ano_recente = "2020";
-//                al.AtualizaAlunos(i);
-//                Console.WriteLine(i);
-//            }
-            
 //            Console.ReadKey();
             
             

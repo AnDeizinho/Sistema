@@ -63,7 +63,12 @@ namespace SistemaShekinahCompleto.Entidades
 
         public AtaFinalEnt(AlunoEnt al, string _serie)
         {
-            
+            if (al.id_aluno == 0)
+                throw new ArgumentException("id_aluno não pode ser 0", "AlunoEnt.id_aluno");
+            if (string.IsNullOrEmpty(al.ano_recente))
+                throw new ArgumentException("ano_recente obrigatório", "AlunoEnt.ano_recente");
+            if (al.turma.id_turma == 0)
+                throw new ArgumentException("turma obrigatória", "AluneEnt.Turma.id_turma");
             id_aluno = al.id_aluno; ano = int.Parse(al.ano_recente); id_turma = al.turma.id_turma; serie = _serie;
             b1 = new BimestreEnt(0, al.id_aluno, al.turma.id_turma, 0, 1, Ano, _serie);
             b2 = new BimestreEnt(0, al.id_aluno, al.turma.id_turma, 0, 2, Ano, _serie);
