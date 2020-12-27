@@ -246,8 +246,13 @@ namespace CaixaSimples
 
         private void btnMensalidade_Click(object sender, EventArgs e)
         {
-            FormMensalidade mes = new FormMensalidade();
-            mes.ShowDialog();
+            Pagamento.PesquisaAluno pesq = new Pagamento.PesquisaAluno();
+            pesq.ShowDialog();
+            Pagamento.frmPagamento pag = new Pagamento.frmPagamento(pesq.Info);
+            pag.ShowDialog();
+            FormMensalidade men = new FormMensalidade(pag.Info, pag.Tbl_Mensalidade, pag.Tbl_Historico);
+            men.ShowDialog();
+
             inicia(StatusDoCaixa.data);
 
 

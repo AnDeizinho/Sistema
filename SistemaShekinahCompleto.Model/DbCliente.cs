@@ -16,9 +16,10 @@ namespace SistemaShekinahCompleto.Model
             con = new Conexao();
             Adaptador = new SqlDataAdapter("Select * from tbl_cliente", con.NovaConexaoBdAtaFinal());
         }
-        public DataTable Select()
+        public DataTable Select(string comando)
         {
             DataTable tbl = new DataTable();
+            Adaptador.SelectCommand.CommandText = comando;
             Adaptador.Fill(tbl);
             return tbl;
         }/*

@@ -11,7 +11,7 @@ namespace SistemaShekinahCompleto.DAO
     {
         public DataTable Select()
         {
-            return new DbCliente().Select();
+            return new DbCliente().Select("");
         }
         public string Cadastrar(ClienteEnt cliente)
         {

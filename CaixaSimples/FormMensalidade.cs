@@ -14,53 +14,30 @@ namespace CaixaSimples
 {
     public partial class FormMensalidade : frmFormulario
     {
-        DataTable tbl_turma = new DataTable();
-        adp adapt;
-        int id_Cliente = 0;
-        public FormMensalidade()
+        Pagamento.InfoPag Info;
+        DataTable Tbl_Mensalidade;
+        DataTable Tbl_Historico;
+        public FormMensalidade(Pagamento.InfoPag Inf, DataTable men, DataTable his)
         {
+            Info = Inf;
+            Tbl_Mensalidade = men;
+            Tbl_Historico = his;
             InitializeComponent();
-            this.cbSerie.SelectedIndex = 0;
+            listaMensalidade();
             this.cbMes.SelectedIndex = System.Convert.ToInt32(System.DateTime.Now.Month.ToString()) - 1;
             this.cbPagamento.SelectedIndex = 0;
-            this.cbano.SelectedIndex = 0;
+            
             
         }
+        
 
         private void FormMensalidade_Load(object sender, EventArgs e)
         {
-            txtCC.Text = "" + id_Cliente;
-            cbano.SelectedIndex = 1;
-            
-            adapt = new adp(string.Format("select id_turma, descricao from tbl_turma where ano = '{0}'", cbano.Text));
-            adapt.Preencher(tbl_turma);
-            foreach (DataRow linha in tbl_turma.Rows)
-            {
-                cbSerie.Items.Add(linha["descricao"].ToString());
-            }
-           
-
-
+            txtCC.Text = "" + Info.Id_cliente;
             //MessageBox.Show(DateTime.Now.Month.ToString());
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
-
-        private void textBox1_KeyDown(object sender,KeyEventArgs e)
-        {
-           
-
-
-            
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+        
         private void cadastra(DateTime data, string serie, string aluno, string mes,string ano, string forma, double valor)
         {
             SqlConnection conexao = new SqlConnection(StatusDoCaixa.conStringBDCaixa);
@@ -89,7 +66,7 @@ namespace CaixaSimples
             comando.Parameters.AddWithValue("@Data", StatusDoCaixa.data.Date);
             
             comando.Parameters.AddWithValue("@Mes", cbMes.Text);
-            comando.Parameters.AddWithValue("@ano", cbano.Text);
+            comando.Parameters.AddWithValue("@ano", Info.AnoContrato);
             
             comando.Parameters.AddWithValue("@Valor", Convert.ToDouble(txtValor.Text));
             comando.CommandText = "update [tbl_Mes] set Data = @Data, Valor = Valor + @Valor where id_cliente = @id and Meses = @mes and ANO = @ano";
@@ -126,17 +103,17 @@ namespace CaixaSimples
             {
                 
                 //dialogo.ShowDialog();
-                cadastra(StatusDoCaixa.data.AddHours(DateTime.Now.Hour).AddMinutes(DateTime.Now.Minute).AddSeconds(DateTime.Now.Second), cbSerie.Text, txtAluno.Text, cbMes.Text,cbano.Text, cbPagamento.Text, Convert.ToDouble(Convert.ToDouble(txtValor.Text).ToString("N")));
-                id_Cliente = Convert.ToInt32(txtCC.Text);
-                if (id_Cliente > 0)
+                cadastra(StatusDoCaixa.data.AddHours(DateTime.Now.Hour).AddMinutes(DateTime.Now.Minute).AddSeconds(DateTime.Now.Second), Info.Turma, Info.NomeAluno, cbMes.Text,Info.AnoContrato, cbPagamento.Text, Convert.ToDouble(Convert.ToDouble(txtValor.Text).ToString("N")));
+                
+                if (Info.Id_cliente> 0)
                 {
                     Mensalidade();
                     listaMensalidade();
                 }
 
                 
-                    string []argumentos = {cbMes.Text, txtValor.Text, cbano.Text, DateTime.Now.Day.ToString(), DateTime.Now.Month.ToString(), DateTime.Now.Year.ToString()};
-                    imprimeReciboPreenchido(argumentos, id_Cliente, cbano.Text);
+                    string []argumentos = {cbMes.Text, txtValor.Text, Info.AnoContrato, DateTime.Now.Day.ToString(), DateTime.Now.Month.ToString(), DateTime.Now.Year.ToString()};
+                    imprimeReciboPreenchido(argumentos, Info.Id_cliente, Info.AnoContrato);
                 
                 
 
@@ -160,16 +137,13 @@ namespace CaixaSimples
             }
         }
 
-        private void dialogo_Load(object sender, EventArgs e)
-        {
-            
-        }
+       
 
         private void imprimi_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             string texto = "\t\tteste de impressao\n\t";
-            texto += "Série : \t\t\t" + cbSerie.Text + "\n\t";
-            texto += "Aluno : \t\t\t" + txtAluno.Text + "\n\t";
+            texto += "Série : \t\t\t" + Info.Turma + "\n\t";
+            texto += "Aluno : \t\t\t" + Info.NomeAluno + "\n\t";
             texto += "Mes : \t\t\t" + cbMes.Text + "\n\t";
             texto += "Forma de Pagamento : \t" + cbPagamento.Text + "\n\t";
             texto += "Valor : \t\t\t" + Convert.ToDouble(txtValor.Text).ToString("C");
@@ -180,146 +154,19 @@ namespace CaixaSimples
 
         }
 
-        private void cbano_Validated(object sender, EventArgs e)
-        {
-            if (cbano.SelectedIndex == 0)
-            {
-                
-                cbano.Focus();
-            }
-        }
+        
 
-        private void cbSerie_Validated(object sender, EventArgs e)
-        {
-            if (cbSerie.SelectedIndex == 0)
-            {
-                cbSerie.Focus();
-            }
-            else if( cbSerie.SelectedIndex > 0)
-            {
-                try
-                {
-                    int id_turma = Convert.ToInt32(tbl_turma.Rows[cbSerie.SelectedIndex - 1][0].ToString());
-
-                    adapt = new adp(string.Format("select nome from tbl_Alunos where id_turma = {0} and ano_recente = '{1}'", id_turma, cbano.Text) );
-                    DataTable tbl_Alunos = new DataTable();
-
-                    adapt.Preencher(tbl_Alunos);
-                    txtAluno.AutoCompleteCustomSource.Clear();
-                    foreach (DataRow linha in tbl_Alunos.Rows)
-                    {
-                        txtAluno.AutoCompleteCustomSource.Add(linha[0].ToString());
-                    }
-                }
-                catch
-                {
-                    MessageBox.Show("erro ao carregar nomes de alunos");
-                }
-            }
-        }
+        
         private void listaMensalidade()
         {
-            SqlCommand carregaMeses = new SqlCommand();
-            carregaMeses.Parameters.AddWithValue("@id", id_Cliente);
-            carregaMeses.Parameters.AddWithValue("@ano", cbano.Text);
-            carregaMeses.CommandText = "select meses, valor from tbl_mes where id_cliente = @id and ano = @ano";
-            adapt.SelectComando(carregaMeses);
-            DataTable tbl_mes = new DataTable();
-            adapt.Preencher(tbl_mes);
-            dataGridView1.DataSource = tbl_mes;
+            
+            dataGridView1.DataSource = Tbl_Mensalidade;
 
-            SqlConnection conexao = new SqlConnection(StatusDoCaixa.conStringBDCaixa);
-            
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = conexao;
-            comando.Parameters.AddWithValue("@id", txtCC.Text);
-            
-            comando.Parameters.AddWithValue("@ano", cbano.Text);
-
-            
-            comando.CommandText = "select Id_Cliente, Data, Mes, Forma_pagamento, Valor from tbl_Mensalidade where id_Cliente = @id and Ano = @ano";
-            SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-            DataTable tblFormas = new DataTable();
-            adaptador.Fill(tblFormas);
-            DTGV.DataSource = tblFormas;
+            DTGV.DataSource = Tbl_Historico;
             
 
         }
-        private void txtAluno_Validated(object sender, EventArgs e)
-        {
-            if (txtAluno.Text == "")
-            {
-                txtAluno.Focus();
-            }
-            else
-            {
-                adapt = new adp("select id_cliente from tbl_Alunos where nome = '" + txtAluno.Text + "'");
-                DataTable tbl_Alunos_id_Cliente = new DataTable();
-                adapt.Preencher(tbl_Alunos_id_Cliente);
-
-                
-
-                if (tbl_Alunos_id_Cliente.Rows.Count > 0)
-                {
-                    
-                    id_Cliente = Convert.ToInt32(tbl_Alunos_id_Cliente.Rows[0][0].ToString());
-                    adapt = new adp("select id_cliente from tbl_Alunos where id_cliente = " + id_Cliente  + " and ano_recente = " + cbano.Text);
-                    DataTable tblId_cliente = new DataTable();
-                    adapt.Preencher(tblId_cliente);
-
-                    txtFilhos.Text = tblId_cliente.Rows.Count.ToString();
-
-                    lblAviso.Text = "Cliente encontrado";
-                    lblAviso.ForeColor = Color.Navy;
-
-                    
-
-                    txtCC.Text = "" + id_Cliente;
-
-                    listaMensalidade();
-                }
-                else
-                {
-                    lblAviso.Text = "Cliente não encontrado";
-                    lblAviso.ForeColor = Color.Red;
-
-                    txtFilhos.Text = "0";
-                    id_Cliente = 0;
-
-                    txtCC.Text = "" + id_Cliente;
-
-                    SqlCommand carregaMeses = new SqlCommand();
-                    carregaMeses.Parameters.AddWithValue("@id", id_Cliente);
-                    carregaMeses.Parameters.AddWithValue("@ano", cbano.Text);
-                    carregaMeses.CommandText = "select meses, valor from tbl_mes where id_meses = 0";
-                    adapt.SelectComando(carregaMeses);
-                    DataTable tbl_mes = new DataTable();
-                    adapt.Preencher(tbl_mes);
-                    dataGridView1.DataSource = tbl_mes;
-
-                    SqlConnection conexao = new SqlConnection(StatusDoCaixa.conStringBDCaixa);
-
-                    SqlCommand comando = new SqlCommand();
-                    comando.Connection = conexao;
-                    comando.Parameters.AddWithValue("@id", txtCC.Text);
-
-                    comando.Parameters.AddWithValue("@ano", cbano.Text);
-
-
-                    comando.CommandText = "select Id_Cliente, Data, Mes, Forma_pagamento, Valor from tbl_Mensalidade where id_mensalidade = 0";
-                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                    DataTable tblFormas = new DataTable();
-                    adaptador.Fill(tblFormas);
-                    DTGV.DataSource = tblFormas;
-
-                    
-
-                }
-
-
-            }
-        }
-
+        
         private void txtValor_Validating(object sender, CancelEventArgs e)
         {
             if (txtValor.Text != "")

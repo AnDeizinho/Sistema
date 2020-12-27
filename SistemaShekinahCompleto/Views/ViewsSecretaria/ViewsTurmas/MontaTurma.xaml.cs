@@ -199,9 +199,9 @@ namespace SistemaShekinahCompleto.Views.ViewsSecretaria.ViewsTurmas
                 TurmaEnt tur = new TurmaEnt();
                 tur.ano = txtano.Text;
                 tur.descricao = txtTurma.Text;
-                tur.Ano = (AnoEnt)cbserie.SelectedItem;
+                tur.Ano = todasasseries[cbserie.SelectedIndex -1];
                 tur.Turnos = (Turno)cbturno.SelectedIndex;
-                tur.Professeor = (ProfessorEnt)cbprofessor.SelectedItem;
+                tur.Professeor = Professores[cbprofessor.SelectedIndex - 1];
                 string mensagem;
                 if (turmas.AtualizaTurma(tur, out mensagem) != RetornosDoModel.Cadastrado)
                 {

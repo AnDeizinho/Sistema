@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\SistemaShekinahCompleto\obj\Debug\
+C:\particular\programa\bancomesmomano\CaixaSimples\SistemaShekinahCompleto\obj\Debug\
 SistemaShekinahCompleto
 none
 false
 DEBUG;TRACE
-C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\SistemaShekinahCompleto\App.xaml
+C:\particular\programa\bancomesmomano\CaixaSimples\SistemaShekinahCompleto\App.xaml
 14-392089770
 
-2276818319
-181505760653
+22-542415790
+18-1643794722
 InicioWF.xaml;Login.xaml;MainWindow.xaml;Views\Caixa.xaml;Views\Inicio.xaml;Views\Secretaria.xaml;Views\ViewsSecretaria\CadastrarTurmas.xaml;Views\ViewsSecretaria\CadastroDeCliente.xaml;Views\ViewsSecretaria\AtualizaAluno.xaml;Views\ViewsSecretaria\ListaAlunos.xaml;Views\ViewsSecretaria\ListaClientes.xaml;Views\ViewsSecretaria\ViewsTurmas\MontaTurma.xaml;Views\ViewsSecretaria\ViewsTurmas\Professor.xaml;Views\ViewsSecretaria\ViewsTurmas\Series.xaml;
 
 True

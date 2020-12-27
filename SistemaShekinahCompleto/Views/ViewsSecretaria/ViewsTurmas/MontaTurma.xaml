@@ -35,6 +35,7 @@
                 <TextBlock Text="Ano Letivo"/>
                 <TextBlock Text="2019"/>
                 <TextBlock Text="2020"/>
+                <TextBlock Text="2021"/>
 
             </ComboBox>
             <TextBox IsEnabled="False" x:Name="txtTurma"/>

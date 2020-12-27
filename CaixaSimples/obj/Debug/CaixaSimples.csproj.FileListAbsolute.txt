@@ -250,3 +250,5 @@ C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\CaixaSimples\obj\Debu
 C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\CaixaSimples\obj\Debug\RdlCompile.compiled
 C:\particular\programa\bancomesmomano\CaixaSimples\CaixaSimples\obj\Debug\CaixaSimples.Controles.inicial.resources
 C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\CaixaSimples\obj\Debug\CaixaSimples.Controles.inicial.resources
+C:\particular\programa\bancomesmomano\CaixaSimples\CaixaSimples\obj\Debug\CaixaSimples.Pagamento.frmPagamento.resources
+C:\particular\programa\bancomesmomano\CaixaSimples\CaixaSimples\obj\Debug\CaixaSimples.Pagamento.InfoPag.resources
