@@ -22,8 +22,10 @@ namespace CaixaSimples
         string str = @"SELECT tbl_Alunos.[id_aluno]
 	  ,tbl_alunos.id_cliente 
       ,[nome]
+        ,tbl_cliente.pai, tbl_cliente.mae
       ,[id_mac]
       ,tbl_turma.descricao
+
       ,tbl_cliente.fone_pai
       ,tbl_cliente.fone_mae
       ,[nascimento]
