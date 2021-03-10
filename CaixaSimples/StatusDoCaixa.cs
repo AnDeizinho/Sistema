@@ -28,8 +28,8 @@ namespace CaixaSimples
         public static double valoApresentado = 0;
         public static double conclusao = 0;
         
-        public static string conStringBDCaixa = @"Data Source = PC-SERVIDOR,1433\SqlExpress; DataBase = BDCaixa ; User ID = sa ; Password = yerdna";
-        public static string conStringBDAtaFinal = @"Data Source = PC-SERVIDOR,1433\SqlExpress; DataBase = BDAtaFinal ; User ID = sa ; Password = yerdna";
+        public static string conStringBDCaixa = @"Data Source = Nilza\SqlExpress; DataBase = BDCaixa ; User ID = sa ; Password = yerdna";
+        public static string conStringBDAtaFinal = @"Data Source = Nilza\SqlExpress; DataBase = BDAtaFinal ; User ID = sa ; Password = yerdna";
         public static void CalculaDinheiro()
         {
             SqlConnection conexao = new SqlConnection(conStringBDCaixa);

@@ -67,7 +67,7 @@ namespace CaixaSimples
         {
 
             cbNivel.SelectedIndex = 0;
-            
+            txtano.Text = DateTime.Now.Year.ToString();
 
             string str2 = string.Format("where tbl_turma.ano= '{0}' order by tbl_turma.descricao , nome", txtano.Text);
             SqlCommand comando = new SqlCommand(str + str2, conexao);
@@ -78,6 +78,7 @@ namespace CaixaSimples
         }
         public frmPesquisaAlunos()
         {
+
             InitializeComponent();
             DefColunas();
             Carregamento();

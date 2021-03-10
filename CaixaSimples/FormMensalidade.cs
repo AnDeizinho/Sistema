@@ -159,6 +159,9 @@ namespace CaixaSimples
         
         private void listaMensalidade()
         {
+            SistemaShekinahCompleto.Model.DbCliente bd = new SistemaShekinahCompleto.Model.DbCliente();
+            string cmd = string.Format("select meses, valor from tbl_mes where id_cliente = {0} and ano = '{1}'", Info.Id_cliente, Info.AnoContrato);
+            Tbl_Mensalidade = bd.Select(cmd);
             
             dataGridView1.DataSource = Tbl_Mensalidade;
 

@@ -8,3 +8,8 @@ C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\SistemaShekinahComple
 C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\SistemaShekinahCompleto.Entidades\obj\Debug\SistemaShekinahCompleto.Entidades.dll
 C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\SistemaShekinahCompleto.Entidades\obj\Debug\SistemaShekinahCompleto.Entidades.pdb
 C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\SistemaShekinahCompleto.Entidades\obj\Debug\SistemaShekinahCompleto.Entidades.csprojResolveAssemblyReference.cache
+C:\programa\bancomesmomano\CaixaSimples\Sistema\Sistema\SistemaShekinahCompleto.Entidades\bin\Debug\SistemaShekinahCompleto.Entidades.dll
+C:\programa\bancomesmomano\CaixaSimples\Sistema\Sistema\SistemaShekinahCompleto.Entidades\bin\Debug\SistemaShekinahCompleto.Entidades.pdb
+C:\programa\bancomesmomano\CaixaSimples\Sistema\Sistema\SistemaShekinahCompleto.Entidades\obj\Debug\SistemaShekinahCompleto.Entidades.csprojResolveAssemblyReference.cache
+C:\programa\bancomesmomano\CaixaSimples\Sistema\Sistema\SistemaShekinahCompleto.Entidades\obj\Debug\SistemaShekinahCompleto.Entidades.dll
+C:\programa\bancomesmomano\CaixaSimples\Sistema\Sistema\SistemaShekinahCompleto.Entidades\obj\Debug\SistemaShekinahCompleto.Entidades.pdb

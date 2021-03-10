@@ -11,7 +11,7 @@ namespace SistemaShekinahCompleto.Model
     {
         Provedores prov;
         public string mensagens { get; private set; }
-        string[] DataSources = {"Monica",@"PC-SERVIDOR,1433\SQLEXPRESS" };
+        string[] DataSources = {"Monica",@"Nilza\SQLEXPRESS" };
         SqlConnection conata;
         SqlConnection concaixa;
 

@@ -16,3 +16,12 @@ C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\SistemaShekinahComple
 C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\SistemaShekinahCompleto.DAO\obj\Debug\SistemaShekinahCompleto.DAO.dll
 C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\SistemaShekinahCompleto.DAO\obj\Debug\SistemaShekinahCompleto.DAO.pdb
 C:\Users\QueirozProgramador\projetos\vsStudio\CaixaSimples\SistemaShekinahCompleto.DAO\obj\Debug\SistemaShekinahCompleto.DAO.csprojResolveAssemblyReference.cache
+C:\programa\bancomesmomano\CaixaSimples\Sistema\Sistema\SistemaShekinahCompleto.DAO\bin\Debug\SistemaShekinahCompleto.DAO.dll
+C:\programa\bancomesmomano\CaixaSimples\Sistema\Sistema\SistemaShekinahCompleto.DAO\bin\Debug\SistemaShekinahCompleto.DAO.pdb
+C:\programa\bancomesmomano\CaixaSimples\Sistema\Sistema\SistemaShekinahCompleto.DAO\bin\Debug\SistemaShekinahCompleto.Entidades.dll
+C:\programa\bancomesmomano\CaixaSimples\Sistema\Sistema\SistemaShekinahCompleto.DAO\bin\Debug\SistemaShekinahCompleto.Model.dll
+C:\programa\bancomesmomano\CaixaSimples\Sistema\Sistema\SistemaShekinahCompleto.DAO\bin\Debug\SistemaShekinahCompleto.Entidades.pdb
+C:\programa\bancomesmomano\CaixaSimples\Sistema\Sistema\SistemaShekinahCompleto.DAO\bin\Debug\SistemaShekinahCompleto.Model.pdb
+C:\programa\bancomesmomano\CaixaSimples\Sistema\Sistema\SistemaShekinahCompleto.DAO\obj\Debug\SistemaShekinahCompleto.DAO.csprojResolveAssemblyReference.cache
+C:\programa\bancomesmomano\CaixaSimples\Sistema\Sistema\SistemaShekinahCompleto.DAO\obj\Debug\SistemaShekinahCompleto.DAO.dll
+C:\programa\bancomesmomano\CaixaSimples\Sistema\Sistema\SistemaShekinahCompleto.DAO\obj\Debug\SistemaShekinahCompleto.DAO.pdb

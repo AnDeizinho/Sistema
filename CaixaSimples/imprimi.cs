@@ -34,6 +34,7 @@ namespace CaixaSimples
 
         private void imprimi_Load_1(object sender, EventArgs e)
         {
+            
             this.tbl_MensalidadeTableAdapter.Fill(this.bDcaixaDataSet.tbl_Mensalidade, StatusDoCaixa.data.Date, StatusDoCaixa.data.Date.AddDays(1));
             // TODO: This line of code loads data into the 'DataSource.tbl_Mensalidade' table. You can move, or remove it, as needed.
             //this.tbl_MensalidadeTableAdapter.Fill(this.DataSource.tbl_Mensalidade, StatusDoCaixa.data.Date, StatusDoCaixa.data.Date.AddDays(1));

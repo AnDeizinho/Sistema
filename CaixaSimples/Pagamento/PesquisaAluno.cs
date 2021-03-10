@@ -21,7 +21,7 @@ namespace CaixaSimples.Pagamento
     }
     public partial class PesquisaAluno : Form
     {
-
+        
         public InfoPag Info { get; set; }
         public PesquisaAluno()
         {
